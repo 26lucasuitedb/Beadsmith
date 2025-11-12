@@ -1,0 +1,46 @@
+.DS_Store
+
+node_modules
+
+# SCA source code - download from NS, for reference only
+/Modules
+
+# SCA deployment credentials
+.nsdeploy
+
+# SCA gulp:local and gulp:deploy build artifacts
+LocalDistribution
+DeployDistribution
+
+# SCA managed gulp config files
+Extensions/payload.json
+Extensions/.yo-rc.json
+SuiteCommerce Advanced 20.1
+SuiteCommerce Advanced 20.2
+
+# SCA managed gulp config files
+Extensions/gulp
+Extensions/ns_npm_repository
+Theme/ns_npm_repository
+Theme/gulp
+Extension/gulp
+Extensions/payload.json
+Extensions/.yo-rc.json
+Theme/gulp/config/config.json
+# SCA extension and theme supporting files
+# Downloaded by `gulp extension:fetch` and `gulp theme:fetch` and should not be edited
+Extensions/Workspace/Extras
+Theme/Workspace/Extras
+Theme/tmp
+Extensions/tmp
+
+# Theme exceptions
+# Theme/Workspace/*/manifest.json
+
+# SCA theme skins; not using
+Theme/Workspace/*/Skins
+
+# gulpfile.js
+# package.json
+package-lock.json
+.idea
