@@ -1,0 +1,210 @@
+/* Edited for Threads Theme */
+
+footer {
+    border-top: 1px solid $sc-footer-border-color;
+    color: $sc-footer-text-color;
+
+    p {
+        color: $sc-footer-text-color;
+    }
+
+    a {
+        color: $sc-footer-link-color;
+
+        &:hover {
+            color: $sc-footer-link-color-hover;
+        }
+
+        &:active {
+            color: $sc-footer-link-color-active;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $sc-footer-headings-color;
+    }
+
+    input {
+        background: $sc-footer-fields-background-color;
+        border: 1px solid $sc-footer-fields-border-color;
+        color: $sc-footer-fields-text-color;
+    }
+}
+
+.footer-content-upper-section-container {
+    background-color: $sc-footer-upper-section-background-color;
+}
+
+.footer-content-upper-section {
+    @extend .container;
+    padding-top: $sc-padding-lv6;
+    padding-bottom: $sc-padding-lv6;
+    text-align: center;
+}
+
+.footer-content-upper-section-title {
+    color: $sc-footer-upper-section-title-color;
+    text-transform: $sc-footer-upper-section-title-text-transform;
+}
+
+.footer-content-newsletter-container {
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: $screen-sm-min) {
+        width: 50%;
+    }
+
+    .newsletter-subscription-form-button-subscribe {
+        background: $sc-footer-buttons-background-color;
+        color: $sc-footer-buttons-text-color;
+        border: 1px solid $sc-footer-buttons-border-color;
+    }
+}
+
+/* SEE _newsletter.scss FOR NEWSLETTER STYLES */
+
+.footer-content-middle-section-container {
+    background-color: $sc-footer-middle-section-background-color;
+}
+
+.footer-content-middle-section {
+    @extend .container;
+    @include site-max-width-container;
+    padding-top: $sc-padding-lv8;
+    padding-bottom: $sc-padding-lv10;
+
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+    }
+}
+
+.footer-logo-view-container {
+    text-align: center;
+    
+    .header-logo {
+        height: auto;
+        line-height: 1;
+        margin-bottom: $sc-margin-lv4;
+
+        @media (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+            .header-logo-image {
+                width: 75%;
+            }
+        }
+    }
+}
+
+.footer-content-social {
+    margin-bottom: $sc-margin-lv8;
+    @media (min-width: $screen-sm-min) {
+        flex: 1;
+        margin-bottom: 0;
+        padding-right: $sc-padding-lv2;
+    }
+}
+
+.footer-content-social-list {
+    display: flex;
+    justify-content: center;
+
+    li {
+        margin-right: $sc-margin-lv2;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        // We 'css-draw' an Instagram-Square's icon here (_icons.scss as well)
+        // because FontAwesome Instagram-Square version was added into v5.2,
+        // we're using v4.7.-
+        // Source: https://github.com/FortAwesome/Font-Awesome/issues/16227
+        .icon-instagram-square {
+            background: $sc-footer-link-color-hover;
+            border-radius: 5px;
+            bottom: 4px;
+            color: $sc-footer-link-color;
+            display: block;
+            // Because css's hierarchy there's no other alternative than !important
+            font-size: $sc-font-size-base !important;
+            line-height: 100%;
+            height: 22px;
+            width: 22px;
+            padding-left: 4px;
+            padding-top: 3px;
+            position: relative;
+        
+            &:hover {
+                background: $sc-footer-link-color;
+            }
+        }
+    }
+}
+
+.footer-content-social-icon {
+    font-size: 20px;
+    margin-right: $sc-margin-lv3;
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 50%;
+
+    @media (min-width: $screen-sm-min) {
+        flex: 3;
+    }
+}
+
+.footer-column-links {
+    flex: 0 1 50%;
+    padding: 0 $sc-padding-lv8 $sc-padding-lv8;
+
+    @media (min-width: $screen-sm-min) {
+        flex: 1;
+        padding: 0 $sc-padding-lv1 0 0;
+    }
+
+    @media (min-width: $screen-md-min) {
+        padding-right: $sc-padding-lv2;
+    }
+}
+
+.footer-column-heading {
+    font-size: $sc-font-size-s;
+    font-weight: $sc-footer-headings-font-weight;
+    text-transform: $sc-footer-column-link-heading-text-transform;
+    margin-bottom: $sc-margin-lv2;
+}
+
+.footer-column-links {
+    font-size: $sc-font-size-xs;
+}
+
+.footer-content-bottom-section-container {
+    background-color: $sc-footer-bottom-section-background-color;
+}
+
+.footer-content-bottom-section {
+    @extend .container;
+    @include site-max-width-container;
+    font-size: $sc-font-size-s;
+    padding: $sc-padding-lv1 $sc-padding-lv3;
+}
+
+.footer-content-copyright {
+    font-size: $sc-font-size-xxs;
+    color: $sc-footer-bottom-section-text-color;
+}
+//This apply for sticky "Add to cart button" dissapears when scrolling down in to the footer section
+
+.footer-content-upper-section-container,
+.footer-content-middle-section-container,
+.footer-content-bottom-section-container {
+
+  @media (max-width: $screen-sm-max) {
+    position: relative;
+    z-index: 999;
+  }
+}
+

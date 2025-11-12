@@ -1,0 +1,69 @@
+{
+    "name": "SDBDeleteAllItems",
+    "fantasyName": "SDBDeleteAllItems",
+    "vendor": "SuiteDB",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Remove all items from cart",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBDeleteAllItems.Service.ss"
+            ]
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBDeleteAllItems/Sass/_sdbdeleteallitems-sdbdeleteallitems.scss"
+        },
+        "files": [
+            "Modules/SDBDeleteAllItems/Sass/_sdbdeleteallitems-sdbdeleteallitems.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBDeleteAllItems/Templates/suitedb_sdbdeleteallitems_sdbdeleteallitems.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SDBDeleteAllItems/JavaScript/SuiteDB.SDBDeleteAllItems.SDBDeleteAllItems.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBDeleteAllItems/JavaScript/SuiteDB.SDBDeleteAllItems.SDBDeleteAllItems.js",
+                    "Modules/SDBDeleteAllItems/JavaScript/SDBDeleteAllItems.View.js",
+                    "Modules/SDBDeleteAllItems/JavaScript/SuiteDB.SDBDeleteAllItems.SDBDeleteAllItems.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SDBDeleteAllItems/SuiteScript/SuiteDB.SDBDeleteAllItems.SDBDeleteAllItems.js",
+        "files": [
+            "Modules/SDBDeleteAllItems/SuiteScript/SuiteDB.SDBDeleteAllItems.SDBDeleteAllItems.js",
+            "Modules/SDBDeleteAllItems/SuiteScript/SDBDeleteAllItems.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace/SDBDeleteAllItems",
+    "suitescript2": {
+        "files": []
+    }
+}

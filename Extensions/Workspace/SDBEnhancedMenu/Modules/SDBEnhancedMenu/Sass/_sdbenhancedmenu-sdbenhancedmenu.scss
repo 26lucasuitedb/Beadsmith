@@ -1,0 +1,169 @@
+.header-menu-secondary-nav.megamenu-layout {
+    --padding-base: 2em;
+    --padding-large: calc(var(--padding-base) + 1em);
+
+    .header-menu-level1 {
+        position: relative;
+    }
+
+    .header-menu-level1>li {
+        float: left;
+        position: static;
+        padding: 0 $sc-padding-lv1;
+
+        &[data-toggle="categories-menu"]:hover>a {
+            border-bottom: $sc-main-navigation-link-hover-border-bottom-width solid $sc-main-navigation-link-hover-border-color;
+            color: $sc-main-navigation-link-hover-color;
+        }
+    }
+
+
+    ul.header-menu-level2 {
+        column-count: var(--column-count, 1);
+        column-gap: 20px;
+        column-fill: balance;
+        grid-area: level2;
+
+        >li {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            display: grid;
+
+            &+li {
+                margin-top: $sc-margin-lv1;
+            }
+        }
+
+    }
+
+    .header-menu-level-container {
+        left: 0;
+        width: 100%;
+        top: var(--megamenu-top, 100%);
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        .header-menu-level2-anchor {
+            // background-color: darken($sc-main-navigation-submenu-background-color, 2);
+            // border-radius: .5em;
+            font-weight: 600;
+            font-weight: 500;
+        }
+
+        .header-menu-level3>li {
+            list-style: square;
+            margin-inline-start: $sc-margin-lv6;
+        }
+
+        .header-menu-level3-anchor {
+            padding: $sc-padding-lv1 $sc-padding-lv4;
+        }
+
+        .header-menu-level2-anchor:hover {
+            background-color: darken($sc-main-navigation-submenu-background-color, 2);
+        }
+    }
+}
+
+.megamenu-layout {
+    .header-menu-level-container>li>ul>li {
+        position: static;
+    }
+
+    .categories-menu-arrow {
+        position: relative;
+
+        &:after {
+            border: solid rgba(0, 0, 0, 0.3);
+            border-width: 2px 2px 0 0;
+            display: block;
+            content: '';
+            transform: rotate(45deg);
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            z-index: 1;
+            right: 15px;
+            top: 50%;
+            margin-top: -3px;
+        }
+    }
+
+    .header-menu-levels-wrapper {
+        display: grid;
+        grid-template-columns: max-content auto;
+        grid-template-areas: 'level2 level3';
+        position: relative;
+
+        &.no-subs {
+            grid-template-areas: 'level2';
+            grid-template-columns: 1fr;
+            --column-count: 2;
+        }
+
+        &.no-subs.no-img {
+            --column-count: 3;
+        }
+    }
+
+    //comment uncomment for 3 level megamenu
+    .header-menu-level3 {
+        position: absolute;
+        inset: 0 !important;
+        grid-area: level3;
+        opacity: var(--opacity, 0);
+        pointer-events: var(--pointer-events, none);
+        background-color: darken($sc-main-navigation-submenu-background-color, 2);
+
+        column-count: 2;
+        column-fill: auto;
+
+        &.is-open {
+            --opacity: 1;
+            --pointer-events: all;
+            border: none;
+        }
+    }
+
+    .megamenu-image-wrapper {
+        display: grid;
+        max-width: 30vw;
+        border-left: 1px solid currentColor;
+        background-color: $sc-main-navigation-submenu-background-color;
+        // padding-top: 4em;
+        // padding-inline: var(--padding-base, 2em);
+
+        img {
+            max-width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    }
+
+
+    .visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    // disable for all combined megamenu
+    .header-menu-level-container>li>ul>li:hover>ul {
+        opacity: var(--opacity, 0);
+    }
+    // disable for all combined megamenu
+
+    .navigation-info-holder {
+
+        z-index: -1;
+        column-count: auto;
+
+        padding: var(--padding-large, 3em);
+
+        .navigation-info {
+            font-size: 1rem;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px
+        }
+    }
+}

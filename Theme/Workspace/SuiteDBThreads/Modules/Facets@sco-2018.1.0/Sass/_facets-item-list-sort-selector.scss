@@ -1,0 +1,21 @@
+/* Edited for Threads Theme */
+
+// .facets-item-list-sort-selector {
+// 	@extend .list-header-filter-input;
+// }
+
+.facets-item-list-sort-selector-dropdown-wrapper {
+    @extend .facets-item-list-show-selector-dropdown-wrapper;
+}
+
+.facets-item-list-sort-selector-dropdown-container {
+    @extend .facets-item-list-show-selector-dropdown-container;
+}
+
+.facets-item-list-sort-selector {
+    @extend .facets-item-list-show-selector;
+}
+
+.facets-item-list-sort-selector-dropdown-menu {
+    @extend .facets-item-list-show-selector-dropdown-menu;
+}

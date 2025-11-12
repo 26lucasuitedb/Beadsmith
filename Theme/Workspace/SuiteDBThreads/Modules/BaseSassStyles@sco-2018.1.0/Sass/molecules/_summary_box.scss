@@ -1,0 +1,100 @@
+// Summary box
+//
+// The Summary Box is currently used across the platform in several contexts to display key information
+// in a succinct manner facilitating the decision making process before performing an action.
+//
+// Markup:
+// <div class="summary-container" style="width: 260px;">
+//   <h3 class="summary-title">Order summary</h3>
+//   <div class="summary-subtotal">
+//     <p class="summary-grid-float">
+//       <span>
+//         Subtotal <span>1 item</span>
+//       </span>
+//       <span class="summary-grid-right">$100.00</span>
+//     </p>
+//   </div>
+//   <div>
+//     <p class="summary-grid-float">
+//       Shipping <span class="summary-grid-right">$10.00</span>
+//     </p>
+//     <p class="summary-grid-float">
+//       Tax <span class="summary-grid-right">$15.00</span>
+//     </p>
+//   </div>
+//   <div class="summary-total">
+//     <p class="summary-grid-float">
+//       Estimated total <span class="summary-grid-right">$125.00</span>
+//     </p>
+//   </div>
+// </div>
+//
+// Styleguide 3.7
+
+/* Edited for Threads Theme */
+
+.summary-title {
+	font-weight: $sc-font-weight-light;
+	font-size: $sc-font-size-xxxl;
+	background:$sc-color-theme-background;
+	padding: 0 0px $sc-padding-lv4 0px;
+	margin-bottom:$sc-margin-lv2;
+	border-bottom: 1px solid $sc-color-theme-border;
+}
+
+.summary-container {
+	//margin-bottom: $sc-margin-lv4;
+	//border: 1px solid $sc-color-theme-border;
+	border-bottom: 0;
+	//padding: 25px;
+	padding-bottom: 0;
+}
+
+.summary-wrapper {
+	border: 1px solid $sc-color-theme-border;
+	padding: 25px 25px 15px 25px;
+}
+
+.summary-subtotal {
+	font-weight: $sc-font-weight-light;
+	//text-transform: uppercase;
+}
+
+.summary-total {
+	font-size: $sc-font-size-xxl;
+	font-weight: $sc-font-weight-light;
+	text-transform: uppercase;
+}
+
+.summary-grid-right {
+	float: right;
+	//padding-right: $sc-padding-lv3;
+	font-weight: $sc-font-weight-semibold;
+}
+
+.summary-grid-float {
+	@extend .row;
+	clear: both;
+	margin: 0;
+	//margin-bottom: $sc-margin-lv2;
+	font-size: $sc-font-size-xl;
+	font-weight: $sc-font-weight-light;
+	//padding-left: $sc-padding-lv3;
+}
+
+.summary-button-container {
+	text-align: center;
+	background: $sc-color-theme-background;
+	padding: $sc-padding-lv4 0;
+}
+
+.button-proceed-to-checkout {
+	@extend .button-primary;
+	@extend .button-large;
+}
+
+.button-apply {
+	@extend .button-secondary;
+	@extend .button-small;
+}
+

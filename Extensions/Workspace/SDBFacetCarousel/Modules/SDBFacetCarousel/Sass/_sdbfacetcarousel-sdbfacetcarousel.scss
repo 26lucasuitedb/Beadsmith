@@ -1,0 +1,120 @@
+:root {
+	--primary-font: "Lato", sans-serif;
+	--cl-neutral-100: #FFFF;
+	--img-carousel-size: 75px;
+	--primary-color: #707070;
+	--primary-color-hover: #000000;
+}
+
+[data-view="SDBFacetCarouselView"]{
+	// width: fit-content;
+	display: grid;
+	align-content: center;
+	& a:hover, a:focus {
+		color: var(--primary-color-hover);
+		text-decoration: none;
+	}
+}
+
+.SDBFacetCarouselView-info-card {
+	@extend .container;
+	width: fit-content !important;
+	height: fit-content !important;
+	display: flex;
+	padding-top: 0px;
+}
+
+.SDBFacetCarouselView-info-card::before,
+.SDBFacetCarouselView-info-card::after {
+	content: none;
+}
+
+.SDBFacetCarouselView-info-card-content {
+	color: $sc-color-secondary;
+	font-weight: bold;
+	background: var(--cl-neutral-100);
+	padding-inline: 0.2em;
+	padding-bottom: .8rem;
+	cursor: pointer;
+	text-align: center;
+
+	& img {
+		height: var(--img-carousel-size);
+		width: var(--img-carousel-size);
+		object-fit: cover;
+	}
+}
+
+.bx-wrapper {
+	position: relative;
+	margin-block: auto;
+	margin-inline: auto;
+}
+
+.card-name {
+	font-family: var(--primary-font);
+	color: var(--primary-color);
+	font-weight: 600;
+	font-size: small;
+	text-transform: uppercase;
+	cursor: pointer;
+	max-height: 85px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.next-icon,
+.prev-icon {
+	display: block;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	pointer-events: all;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	color: var(--primary-color);
+	font-size: 2em;
+}
+
+.prev-icon {
+	inset: 0 auto 0 auto;
+    top: 30%;
+}
+
+.next-icon {
+	inset: 0 0 auto auto;
+    top: 30%;
+}
+
+.bx-viewport {
+	height: auto !important;
+	min-height: fit-content !important;
+}
+
+.bx-default-pager {
+	display: none;
+}
+
+.SDBFacetCarouselView-title {
+	display: flex;
+	justify-content: center;
+	padding-block: 10px;
+	margin: 0;
+	width: 100%;
+}
+
+.SDBFacetCarouselView-title h2 {
+	font-weight: 800;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+
+.SDBFacetCarouselView-info-card>div {
+	padding: 5px;
+}
+
+.carousel-next-arrow:before{
+	height: 10px;
+}

@@ -1,0 +1,9 @@
+/* Edited for Threads Theme */
+
+.backbone-collection-view-row{
+    //@extend .row;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 70px;
+}
+

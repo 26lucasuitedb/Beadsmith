@@ -1,0 +1,24 @@
+/* Edited for Threads Theme */
+
+.recently-viewed-items {
+	position:relative;
+	h3 {
+		@extend .product-slider-title;
+	}
+	.bx-controls-direction{
+		text-align:right;
+		margin-bottom:$sc-margin-lv8;
+	}
+}
+
+ul.recently-viewed-row-cell li{
+	display:inline-block;
+}
+
+.recently-viewed-cell-item-cell {
+	padding: 0 3px;
+	@media (min-width: $screen-sm-min) {
+		padding: 0 6px;
+	}
+}
+

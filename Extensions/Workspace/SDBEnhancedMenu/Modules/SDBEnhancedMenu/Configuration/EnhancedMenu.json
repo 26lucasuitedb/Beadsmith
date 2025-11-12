@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "modifications": [
+    {
+      "target": "$.properties.navigationData.items.properties",
+      "action": "add",
+      "value": {
+        "imgUrl": {
+          "type": "string",
+          "title": "Img Url",
+          "translate": false,
+          "description": "Images url",
+          "mandatory": false
+        },
+        "loginRequired": {
+          "type": "boolean",
+          "title": "Should be logged in to see",
+          "translate": false,
+          "description": "Add this menu item only if the user is logged in",
+          "mandatory": false
+        }
+      }
+    }
+  ],
+   "properties": { 
+        "SDBEnhancedMenu.layoutChange": {
+            "group": "extensions",
+            "subtab": "SDBEnhancedMenu_subtab",
+            "type": "boolean",
+            "title": "Alter the header layout with megamenu",
+            "description": "Check this option if you want to alter the default header styles into a megamenu layout instead",
+            "default": "false"
+        }
+    }
+}

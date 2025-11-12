@@ -1,0 +1,114 @@
+// Custom File for Threads Home Template
+
+// Carousel Icons
+$sc-home-carousel-icons-display: none; /* editable({
+	"type": "string",
+	"label": "Display Carousel Icons",
+	"options": [
+		{"value": "none", "text": "Hide"},
+		{"value": "block", "text": "Show"}
+	]
+}) */
+$sc-home-carousel-icons-color-desktop: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Desktop Carousel Icons Color"}) */
+$sc-home-carousel-icons-color-mobile: $sc-color-primary; /* editable({"type": "color", "label": "Mobile Carousel Icons Color"}) */
+
+
+// Carousel variables
+$sc-home-carousel-title-font-size: 52px; /* editable({"type": "string", "label": "Title Font Size", "description": ""}) */
+$sc-home-carousel-title-color: $sc-color-copy; /* editable({"type": "color", "label": "Title Color"}) */
+$sc-home-carousel-title-text-transform: uppercase; /* editable({
+	"type": "string",
+	"label": "Title Text Transform",
+	"options": [
+		{"value": "none", "text": "none"},
+		{"value": "uppercase", "text": "uppercase"},
+		{"value": "lowercase", "text": "lowercase"},
+		{"value": "capitalize", "text": "capitalize"}
+	]
+}) */
+$sc-home-carousel-text-color: $sc-color-copy; /* editable({"type": "color", "label": "Text Color"}) */
+$sc-home-carousel-text-font-size: 22px; /* editable({"type": "string", "label": "Text Font Size", "description": ""}) */
+$sc-home-carousel-text-text-transform: none; /* editable({
+	"type": "string",
+	"label": "Text Text Transform",
+	"options": [
+		{"value": "none", "text": "none"},
+		{"value": "uppercase", "text": "uppercase"},
+		{"value": "lowercase", "text": "lowercase"},
+		{"value": "capitalize", "text": "capitalize"}
+	]
+}) */
+$sc-home-carousel-button-background-color: transparent; /* editable({"type": "color", "label": "Button Background Color"}) */
+$sc-home-carousel-button-border-color: $sc-color-copy; /* editable({"type": "color", "label": "Button Border Color"}) */
+$sc-home-carousel-button-text-color: $sc-color-copy; /* editable({"type": "color", "label": "Button Text Color"}) */
+
+$sc-home-carousel-button-background-color-hover: $sc-color-primary; /* editable({"type": "color", "label": "Button Background Color on Hover"}) */
+$sc-home-carousel-button-border-color-hover: $sc-color-primary; /* editable({"type": "color", "label": "Button Border Color on Hover"}) */
+$sc-home-carousel-button-text-color-hover: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Button Text Color on Hover"}) */
+
+
+// Carousel variables for Mobile
+$sc-home-carousel-title-color-mobile: $sc-color-copy; /* editable({"type": "color", "label": "Title Color on Mobile"}) */
+$sc-home-carousel-text-color-mobile: $sc-color-copy; /* editable({"type": "color", "label": "Text Color on Mobile"}) */
+$sc-home-carousel-button-background-color-mobile: transparent; /* editable({"type": "color", "label": "Button Background Color on Mobile"}) */
+$sc-home-carousel-button-border-color-mobile: $sc-color-copy; /* editable({"type": "color", "label": "Button Border Color on Mobile"}) */
+$sc-home-carousel-button-text-color-mobile: $sc-color-copy; /* editable({"type": "color", "label": "Button Text Color on Mobile"}) */
+
+
+// Infoblocks variables
+$sc-home-infoblock-cell-desktop-width: 23%; /* editable({"type": "string", "label": "Cell Desktop Width"}) */
+$sc-home-infoblock-cell-height: 250px; /* editable({"type": "string", "label": "Cell Height", "description": ""}) */
+$sc-home-infoblock-cell-content-overlay-color: #000; /* editable({"type": "color", "label": "Cell Overlay Color"}) */
+$sc-home-infoblock-cell-content-overlay-opacity: 0; /* editable({
+	"type": "string",
+	"label": "Cell Overlay Opacity",
+	"options": [
+		{"value": "0", "text": "None"},
+		{"value": "0.3", "text": "Light"},
+		{"value": "0.5", "text": "Dark"}
+	]
+}) */
+$sc-home-infoblock-cell-content-alignment: center; /* editable({
+	"type": "string",
+	"label": "Cell Content Alignment",
+	"options": [
+		{"value": "flex-start", "text": "Top"},
+		{"value": "center", "text": "Middle"},
+		{"value": "flex-end", "text": "Bottom"}
+	]
+}) */
+
+
+$sc-home-infoblock-title-font-size: 20px; /* editable({"type": "string", "label": "Title Font Size", "description": ""}) */
+$sc-home-infoblock-title-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Title Color"}) */
+$sc-home-infoblock-title-text-transform: uppercase; /* editable({
+	"type": "string",
+	"label": "Title Text Transform",
+	"options": [
+		{"value": "none", "text": "none"},
+		{"value": "uppercase", "text": "uppercase"},
+		{"value": "lowercase", "text": "lowercase"},
+		{"value": "capitalize", "text": "capitalize"}
+	]
+}) */
+$sc-home-infoblock-title-font-style: italic;  
+/* editable({
+	"type": "string",
+	"label": "Title Font Style",
+	"options": [
+		{"value": "normal", "text": "normal"},
+		{"value": "italic", "text": "italic"}
+	]
+}) */
+$sc-home-infoblock-text-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Text Color"}) */
+$sc-home-infoblock-text-font-size: 15px; /* editable({"type": "string", "label": "Text Font Size", "description": ""}) */
+
+// Freetext Area variables
+$sc-home-freetext-divider-display: block; /* editable({
+	"type": "string",
+	"label": "Display Divider",
+	"options": [
+		{"value": "none", "text": "Hide"},
+		{"value": "block", "text": "Show"}
+	]
+}) */

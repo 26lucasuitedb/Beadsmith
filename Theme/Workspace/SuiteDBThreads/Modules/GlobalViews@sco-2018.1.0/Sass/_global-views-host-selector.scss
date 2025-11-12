@@ -1,0 +1,18 @@
+.global-views-host-selector{
+	margin-bottom:$sc-margin-lv2;
+	overflow:hidden;
+	@extend .selector;
+}
+
+.global-views-host-selector-addon{
+	@extend .selector-icon;
+}
+
+.global-views-host-selector-select{
+	@extend .selector-select;
+	line-height: 1.2rem;
+}
+
+.global-views-host-selector-globe-icon{
+	@extend .icon-globe;
+}

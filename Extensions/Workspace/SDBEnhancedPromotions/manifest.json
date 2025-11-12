@@ -1,0 +1,92 @@
+{
+    "name": "SDBEnhancedPromotions",
+    "fantasyName": "SDBEnhancePromotions",
+    "vendor": "SuiteDB",
+    "version": "1.0.3",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Create menu items and links with current website promotions per customer basis",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SDBEnhancedPromotions/Configuration/SDBEnhancedPromotions.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss",
+            "myaccount": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss",
+            "checkout": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss"
+        },
+        "files": [
+            "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBEnhancedPromotions/Templates/suitedb_sdbenhancedpromotions_sdbenhancedpromotions.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/SDBEnhancedPromotions/Templates/suitedb_sdbenhancedpromotions_sdbenhancedpromotions.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/SDBEnhancedPromotions/Templates/suitedb_sdbenhancedpromotions_sdbenhancedpromotions.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.EntryPoint.js",
+            "myaccount": "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.EntryPoint.js",
+            "checkout": "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.EntryPoint.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.View.js",
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.EntryPoint.js",
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.View.js",
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.EntryPoint.js",
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.View.js",
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.EntryPoint.js",
+                    "Modules/SDBEnhancedPromotions/JavaScript/SDBEnhancedPromotions.Model.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/SDBEnhancedPromotions",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBEnhancedPromotions/SuiteScript2/SDBEnhancedPromotions.service.ss"
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "name": "SDBDownloadOrderCSV",
+    "fantasyName": "SDBDownloadOrderCsv",
+    "vendor": "SuiteDB",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCS,SCA",
+    "target_version": {
+        "SCS": "",
+        "SCA": ""
+    },
+    "description": "",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/SDBDownloadOrderCSV/Sass/_sdbdownloadordercsv-sdbdownloadordercsv.scss"
+        },
+        "files": [
+            "Modules/SDBDownloadOrderCSV/Sass/_sdbdownloadordercsv-sdbdownloadordercsv.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBDownloadOrderCSV/Templates/suitedb_sdbdownloadordercsv_sdbdownloadordercsv.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/SDBDownloadOrderCSV/JavaScript/SuiteDB.SDBDownloadOrderCSV.SDBDownloadOrderCSV.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBDownloadOrderCSV/JavaScript/SuiteDB.SDBDownloadOrderCSV.SDBDownloadOrderCSV.js",
+                    "Modules/SDBDownloadOrderCSV/JavaScript/SDBDownloadOrderCSV.View.js",
+                    "Modules/SDBDownloadOrderCSV/JavaScript/SuiteDB.SDBDownloadOrderCSV.SDBDownloadOrderCSV.Model.js",
+                    "Modules/SDBDownloadOrderCSV/JavaScript/Helper.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/SDBDownloadOrderCSV",
+    "suitescript2": {
+        "files": []
+    }
+}

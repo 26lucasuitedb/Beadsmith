@@ -1,0 +1,25 @@
+/* Edited for Threads Theme */
+
+.transaction-line-views-selected-option {
+    display: flex;
+
+    .cart-confirmation-modal-options & {
+        display: block;
+    }
+}
+
+.transaction-line-views-selected-option-label {
+    flex: 1;
+    @extend .sc-label;
+    color: $sc-color-theme;
+    font-weight: $sc-font-weight-light;
+    font-size: $sc-font-size-l;
+}
+.transaction-line-views-selected-option-value {
+    flex: 2;
+    @extend .sc-value;
+    color: $sc-color-secondary;
+    font-weight: $sc-font-weight-light;
+    font-size: $sc-font-size-l;
+}
+

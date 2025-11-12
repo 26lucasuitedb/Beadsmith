@@ -1,0 +1,91 @@
+// Stilization for the marked items add to cart button
+.cart-add-to-cart-button-container {
+	&.mark-for-later-add-to-cart-button-container {
+		width: 100%;
+		display: grid;
+		place-items: flex-end;
+		height: fit-content;
+		padding-block: 1em;
+		padding-inline: 0;
+		gap: 0.3em;
+
+		.cart-add-to-cart-button-button {
+			width: max-content;
+			margin: 0;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.cart-add-to-cart-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px 0;
+		margin-bottom: 0;
+	}
+	.facets-facet-browse-items > :first-child > .cart-add-to-cart-button-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+	}
+}
+
+// Minimal stilization for the mark for later checkbox
+.facets-item-cell-grid-mark-for-add {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 0.3em;
+
+	>* {
+		margin: 0;
+		min-height: 30px;
+	}
+
+	.facets-item-cell-grid-mark-for-add__label,
+	.facets-item-cell-grid-mark-for-add__input {
+		margin: 0;
+	}
+
+	.facets-item-cell-grid-mark-for-add__input {
+		width: min-content;
+		min-width: 3ch;
+		max-width: 6ch;
+		font-size: $sc-font-size-m;
+		padding: 0.2em 0.8em;
+		text-align: center;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+			-moz-appearance: none;
+			appearance: none;
+		}
+	}
+
+	.facets-item-cell-grid-add-all-selected-qty-btn {
+		@extend .button-primary;
+		width: min-content;
+		height: min-content;
+		padding-inline: $sc-padding-lv2;
+		padding-block: 0;
+		border-radius: $sc-border-radius;
+		aspect-ratio: 1/1;
+	}
+}
+
+
+.facets-facet-browse-items > :first-child {
+    position: sticky;
+    top: 0;
+    z-index: 300; 
+} 
+
+.facets-facet-browse-items > :first-child > .cart-add-to-cart-button-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+} 

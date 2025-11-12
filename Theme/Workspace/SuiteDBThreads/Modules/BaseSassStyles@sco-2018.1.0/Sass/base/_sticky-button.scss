@@ -1,0 +1,27 @@
+[data-type="sticky"].sticked {
+	@media (max-width: $screen-xs) {
+		visibility: hidden;
+	}
+}
+
+.sticky-button-container-clone {
+	display: none;
+
+	@media (max-width: $screen-sm) and (orientation: portrait) {
+		&.sticked {
+			display: block;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 99;
+			margin-left: -15px;
+			background-color: white;
+            padding-bottom: $sc-padding-lv4;
+            padding-left: $sc-padding-lv3;
+            padding-right: $sc-padding-lv3;
+            padding-top: $sc-padding-lv4;
+		}
+	}
+}
+
+

@@ -1,0 +1,67 @@
+@if $theme-selection-search == search-on-navigation {
+
+  #site-header {
+
+    @media (min-width: $screen-md-min) {
+      nav.header-menu-secondary-nav {
+        display: flex;
+        flex-wrap: wrap;
+        .header-site-search {
+          &.search-desktop {
+            display: block !important; //Overriding an inline style
+          }
+          .site-search {
+            border-top: none;
+            padding: 0;
+            margin-top: (-$sc-margin-lv1);
+            .site-search-button-submit {
+              padding: $sc-padding-lv2;
+            }
+          }
+        }
+
+        .header-menu-search-link,
+        .search-link {
+          display: none; //Hidde search button
+        }
+
+        .header-menu-search {
+          min-width: 30%; //We don't want this to be super small, so let's set a minimmum width
+          flex-grow: 1;
+          .site-search-content {
+            max-width: 600px; //Reducing max width here in order to align the search with the menu items
+            width: auto;
+            &:after,
+            &:before { //the small pick is not needed for this option
+              display: none;
+            }
+          }
+        }
+
+        ul.header-menu-level1 {
+          flex: auto;
+          >li { //we need to add some extra space for menu items
+            margin-bottom: $sc-margin-lv3;
+          }
+        }
+
+
+
+      }
+
+      //changing the menu alignment for this option. Centered menu is not possible with the current structure.
+      .header-menu-level1 {
+        justify-content: left;
+      }
+
+      .header-site-search {
+        &.search-mobile {
+          display: none !important; //overriding an inline style.
+        }
+      }
+    }
+
+  }
+
+}
+

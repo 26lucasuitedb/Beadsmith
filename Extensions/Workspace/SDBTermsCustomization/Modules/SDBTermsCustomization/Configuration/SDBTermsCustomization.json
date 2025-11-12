@@ -1,0 +1,12 @@
+{
+    "properties": { 
+        "SDBTermsCustomization.config": {
+            "group": "extensions",
+            "subtab": "SDBTermsCustomization_subtab",
+            "type": "string",
+            "title": "SDBTermsCustomization_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

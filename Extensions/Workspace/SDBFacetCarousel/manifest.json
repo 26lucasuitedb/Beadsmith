@@ -1,0 +1,72 @@
+{
+    "name": "SDBFacetCarousel",
+    "fantasyName": "SDBFacetCarousel",
+    "vendor": "SuiteDB",
+    "version": "1.0.7",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Adds a carousel of shapes based on the facet Category",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBFacetCarousel.Service.ss"
+            ]
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBFacetCarousel/Sass/_sdbfacetcarousel-sdbfacetcarousel.scss"
+        },
+        "files": [
+            "Modules/SDBFacetCarousel/Sass/_sdbfacetcarousel-sdbfacetcarousel.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBFacetCarousel/Templates/suitedb_sdbfacetcarousel_sdbfacetcarousel.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SDBFacetCarousel/JavaScript/SuiteDB.SDBFacetCarousel.SDBFacetCarousel.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBFacetCarousel/JavaScript/SuiteDB.SDBFacetCarousel.SDBFacetCarousel.js",
+                    "Modules/SDBFacetCarousel/JavaScript/SDBFacetCarousel.View.js",
+                    "Modules/SDBFacetCarousel/JavaScript/SuiteDB.SDBFacetCarousel.SDBFacetCarousel.Model.js",
+                    "Modules/SDBFacetCarousel/JavaScript/SuiteDB.SDBFacetCarousel.SDBFacetCarousel.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SDBFacetCarousel/SuiteScript/SuiteDB.SDBFacetCarousel.SDBFacetCarousel.js",
+        "files": [
+            "Modules/SDBFacetCarousel/SuiteScript/SuiteDB.SDBFacetCarousel.SDBFacetCarousel.js",
+            "Modules/SDBFacetCarousel/SuiteScript/SDBFacetCarousel.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace/SDBFacetCarousel",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBFacetCarousel/SuiteScript2/SDBFacetCarousel.Service.ss"
+        ]
+    }
+}

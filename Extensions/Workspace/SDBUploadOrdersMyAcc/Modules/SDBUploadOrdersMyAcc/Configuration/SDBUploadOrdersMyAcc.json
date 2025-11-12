@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "SDBUploadOrdersMyAcc.config": {
+            "group": "extensions",
+            "subtab": "SDBUploadOrdersMyAcc_subtab",
+            "type": "string",
+            "title": "SDBUploadOrdersMyAcc_Title",
+            "description": "Config description example",
+            "default": "Upload your orders here, or get the sample template to assist with building your order."
+        }
+    }
+}

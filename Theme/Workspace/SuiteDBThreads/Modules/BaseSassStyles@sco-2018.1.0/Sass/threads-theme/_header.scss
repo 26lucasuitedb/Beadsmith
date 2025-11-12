@@ -1,0 +1,35 @@
+// Edited for Threads Theme
+// Header Banner Text
+$sc-header-banner-text-background-color: $sc-color-primary; /* editable({"type": "color", "label": "Header Banner Background"}) */
+$sc-header-banner-text-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Header Banner Text Color"}) */
+
+// Header variables
+$sc-header-background-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Header Background"}) */
+$sc-header-shadow-color: none;
+$sc-header-border-color: $sc-color-theme-border; /* editable({"type": "color", "label": "Border"}) */
+$sc-header-border-width: 1px;
+
+// Header links variables
+$sc-header-link-text-color: $sc-color-secondary; /* editable({"type": "color", "label": "Link"}) */
+$sc-header-link-hover-text-color: $sc-color-link-hover; /* editable({"type": "color", "label": "Link hover"}) */
+$sc-header-link-active-text-color: $sc-color-copy-dark; /* editable({"type": "color", "label": "Link active"}) */
+$sc-header-link-text-transform: none;
+
+// Header cart link variables
+$sc-header-cart-link-text-color: $sc-color-copy; /* editable({"type": "color", "label": "Cart link"}) */
+$sc-header-cart-link-text-color-hover: desaturate(lighten($sc-button-primary-background-color, 10), 9); /* editable({"type": "color", "label": "Cart link hover"}) */
+$sc-header-cart-link-text-color-active: desaturate(darken($sc-button-primary-background-color, 5), 10); /* editable({"type": "color", "label": "Cart link active"}) */
+
+// Mobile header icons
+$sc-mobile-header-icon-color: $sc-color-secondary;
+$sc-mobile-header-icon-active-color: $sc-color-secondary;
+$sc-mobile-header-cart-icon-color: $sc-color-copy;
+$sc-mobile-header-cart-icon-active-color: $sc-color-copy;
+
+$sc-mobile-header-border-color: transparent;
+$sc-mobile-header-border-width: 0;
+
+// Search Header Icons
+$sc-header-search-icon-color: $sc-color-secondary; /* editable({"type": "color", "label": "Search Icon"}) */
+$sc-header-search-icon-color-hover: $sc-color-primary; /* editable({"type": "color", "label": "Search Icon Hover"}) */
+$sc-header-search-icon-color-active: $sc-color-secondary; /* editable({"type": "color", "label": "Search Icon Active"}) */

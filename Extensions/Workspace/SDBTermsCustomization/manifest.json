@@ -1,0 +1,77 @@
+{
+    "name": "SDBTermsCustomization",
+    "fantasyName": "SDBTermsCustomization",
+    "vendor": "SuiteDB",
+    "version": "1.0.1",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Terms Customization for Checkout",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBTermsCustomization.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SDBTermsCustomization/Configuration/SDBTermsCustomization.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/SDBTermsCustomization/Sass/_sdbtermscustomization-sdbtermscustomization.scss"
+        },
+        "files": [
+            "Modules/SDBTermsCustomization/Sass/_sdbtermscustomization-sdbtermscustomization.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/SDBTermsCustomization/Templates/suitedb_sdbtermscustomization_sdbtermscustomization.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/SDBTermsCustomization/JavaScript/SuiteDB.SDBTermsCustomization.SDBTermsCustomization.EntryPoint.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/SDBTermsCustomization/JavaScript/SDBTermsCustomization.View.js",
+                    "Modules/SDBTermsCustomization/JavaScript/SuiteDB.SDBTermsCustomization.SDBTermsCustomization.EntryPoint.js",
+                    "Modules/SDBTermsCustomization/JavaScript/SuiteDB.SDBTermsCustomization.SDBTermsCustomization.Model.js",
+                    "Modules/SDBTermsCustomization/JavaScript/SuiteDB.SDBTermsCustomization.SDBTermsCustomization.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SDBTermsCustomization/SuiteScript/SuiteDB.SDBTermsCustomization.SDBTermsCustomization.js",
+        "files": [
+            "Modules/SDBTermsCustomization/SuiteScript/SuiteDB.SDBTermsCustomization.SDBTermsCustomization.js",
+            "Modules/SDBTermsCustomization/SuiteScript/SDBTermsCustomization.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace/SDBTermsCustomization",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBTermsCustomization/SuiteScript2/SDBTermsCustomization.Service.ss"
+        ]
+    }
+}

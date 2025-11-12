@@ -1,0 +1,12 @@
+//Theme component: Search box
+
+$theme-selection-search: search-legacy;/* editable({
+	"type": "string",
+	"label": "Component: Search (Desktop)",
+	"options": [
+		{"value": "search-legacy", "text": "Search Default"},
+		{"value": "search-on-navigation", "text": "Search in Navigation"},
+    {"value": "search-open", "text": "Search Open"}
+	]
+}) */
+

@@ -1,0 +1,51 @@
+// Edited for Threads
+
+.cart-add-to-cart-button-button {
+	@extend .button-primary;
+	@extend .button-large;
+	width: 100%;
+ 	font-weight: $sc-font-weight-semibold;
+ 	margin-top: $sc-margin-lv3;
+    padding: $sc-padding-lv4 $sc-padding-lv5;
+}
+
+.cart-add-to-cart-button {
+	position: static;
+	margin-bottom: $sc-margin-lv3 * 2;
+
+	@media (min-width: $screen-md-min) {
+		margin-bottom: 0;
+	}
+}
+
+.cart-add-to-cart-button-container {
+	@extend .col-sm-6;
+}
+
+// Sticky Add to Cart Button Mobile & error message positions.
+.product-details-full-content {
+  .cart-add-to-cart-button-button {
+    @media (max-width: $screen-sm-max) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 99;
+      border-radius: 0;
+    }
+  }
+}
+.product-details-options-selector {
+  @media (max-width: $screen-sm-max) {
+    [data-validation-error='block'] {
+      margin-top: $sc-margin-lv3;
+      position: fixed;
+      z-index: 99;
+      bottom: 58px;
+      display: block;
+      width: 100%;
+      left: 0;
+      text-align: center;
+    }
+  }
+}
+

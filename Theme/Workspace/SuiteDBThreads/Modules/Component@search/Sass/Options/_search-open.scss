@@ -1,0 +1,54 @@
+@if $theme-selection-search == search-open {
+
+  #site-header {
+
+    @media (min-width: $screen-md-min) {
+      .header-menu-search {
+        min-width: 100%;
+        float: none;
+        clear: both;
+        display: block;
+
+        //The search is having now a different location for Desktop, so the grey border is now limited
+        //to the new container. In order to not change this visual deteail, I created a fake border using
+        //a pseudo-element. This is a relative position to the search box, but it can use the 100% of the screen.
+        &:before {
+          display: block;
+          content: '';
+          width: 100%;
+          border-top: 1px solid $sc-color-theme-border-light;
+          height: 0px;
+          position: absolute;
+          top: 43px; //the bottom of this line needs to be equal to the box height + top/bottom padding. This is currently using a "magic number" in ".nav-search-content". No variable usage is possible here, unless I create one for those sections too.
+          left: 0;
+        }
+
+        .header-site-search {
+          display: block !important; //overriding an inline style (it happens in SMT also)
+          .site-search-content {
+            &:before,
+            &:after { //the small pick is not needed for this option
+              display: none;
+            }
+            max-width: 600px; //thia ia a magic number also in the default implementation
+            width: auto;
+          }
+        }
+
+      }
+
+      .header-menu-search-link {
+        display: none; //Without the button
+      }
+
+      .header-site-search {
+        &.search-mobile {
+          display: none !important; //overriding an inline style.
+        }
+      }
+    }
+
+  }
+
+}
+

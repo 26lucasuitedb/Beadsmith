@@ -1,0 +1,46 @@
+/* Matrix Multi Add */
+.matrix-multi-add {
+    margin-bottom: $sc-margin-lv6;
+}
+
+.matrix-multi-add-table-wrapper table {
+    width: 100%;
+}
+
+.matrix-multi-add-quantity {
+    padding: 0;
+}
+
+.multi-add-to-cart-quantity-value {
+    background-color: #dddddd !important;
+    min-width: auto !important;
+}
+
+/* Look Book */
+.itemdetails-lookitems-container h3 {
+    @extend .product-slider-title;
+}
+
+/* UI Extensions */
+/* CCT COLUMNS */
+.home {
+    .columnscct-layout {
+        width: auto;
+        margin-left: $sc-margin-lv3;
+        margin-right: $sc-margin-lv3;
+
+        .columnscct-column-container {
+            padding-left: $sc-padding-lv3;
+            padding-right: $sc-padding-lv3;
+        }
+    }
+}
+
+/* CCT FEATURED PRODUCT */
+.featuredproductcct-layout {
+    .product-content {
+        padding-left: $sc-padding-lv3;
+        padding-right: $sc-padding-lv3;
+    }
+}
+

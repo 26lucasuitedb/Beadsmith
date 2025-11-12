@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "SDBDownloadInvoice.config": {
+            "group": "extensions",
+            "subtab": "SDBDownloadInvoice_subtab",
+            "type": "string",
+            "title": "SDBDownloadInvoice_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

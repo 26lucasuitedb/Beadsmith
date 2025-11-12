@@ -1,0 +1,110 @@
+/* Edited for Threads Theme */
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+%scroll-y{
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+// avoid using BS mixin cause wont generate "-webkit-transform"
+@mixin transition-transform($duration...) {
+	-webkit-transition: -webkit-transform $duration;
+	-moz-transition: -moz-transform $duration;
+	-o-transition: -o-transform $duration;
+	transition: transform $duration;
+}
+
+@mixin appearance($appearance) {
+	-webkit-appearance: $appearance;
+	-moz-appearance: $appearance;
+	appearance: $appearance;
+}
+
+//used for select arrow down
+@mixin angle-down-background($color){
+	$color-local: remove-hash-from-color($color);
+	background-image:url("data:image/svg+xml;utf8,<svg width='2000px' height='2000px' fill='%23#{$color-local}' xmlns='http://www.w3.org/2000/svg'><path d='M1075 352q0 -13 -10 -23l-50 -50q-10 -10 -23 -10t-23 10l-393 393l-393 -393q-10 -10 -23 -10t-23 10l-50 50q-10 10 -10 23t10 23l466 466q10 10 23 10t23 -10l466 -466q10 -10 10 -23z'/></svg>");
+}
+
+
+@function remove-hash-from-color($color) {
+	@return str-slice(ie-hex-str($color), 4);
+}
+
+//All placeholders equal
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content};
+	&:-moz-placeholder           {@content};
+	&::-moz-placeholder          {@content};
+	&:-ms-input-placeholder      {@content};
+}
+
+// added hypen to long text/word/content
+// HOW TO USE
+// @include hyphen(auto);
+@mixin hyphens($args...) {
+    -webkit-hyphens: $args;
+    -ms-hyphens: $args;
+    hyphens: $args;
+}
+
+// generic transform
+// HOW TO USE
+// @include transform(scale(1));
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+// generic transition
+// HOW TO USE
+// @include transition(all 300ms ease-in-out);
+@mixin transition($transitions) {
+    -moz-transition: $transitions;
+      -o-transition: $transitions;
+     -ms-transition: $transitions;
+ -webkit-transition: $transitions;
+       transition: $transitions;
+}
+
+// generic animation
+// HOW TO USE
+// @include animation(fadein 1s forwards 1s);
+@mixin animation($animations) {
+    -moz-animation: $animations;
+      -o-animation: $animations;
+     -ms-animation: $animations;
+ -webkit-animation: $animations;
+       animation: $animations;
+}
+
+// generic keyframes
+// HOW TO USE
+// @include keyframes(fadein) {
+//      100% {
+//          opacity: 1;
+//      }
+// }
+@mixin keyframes($keyframesName) {
+    @-moz-keyframes #{$keyframesName} {
+        @content;
+    }
+    @-o-keyframes #{$keyframesName} {
+        @content;
+    }
+    @-webkit-keyframes #{$keyframesName} {
+        @content;
+    }
+    @keyframes #{$keyframesName} {
+        @content;
+    }
+}

@@ -1,0 +1,16 @@
+.header-simplified-header{
+    background-color: $sc-header-background-color;
+    padding: $sc-padding-lv3;
+	// height: $sc-main-nav-height;
+	// box-shadow: 3px 0px 6px $sc-header-shadow-color;
+}
+
+.header-simplified-header-logo{
+	text-align: center;
+
+	.header-logo-image{
+		width: auto;
+	}
+}
+
+

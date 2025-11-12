@@ -1,0 +1,167 @@
+/* Edited for Threads Theme */
+
+.product-details-information-content {
+    margin-top: $sc-margin-lv6;
+    margin-bottom: $sc-margin-lv8;
+
+    @media ($screen-md-min) {
+        margin-top: 0;
+    }
+}
+.product-details-information-content-tabs {
+	@extend .content-tabs;
+}
+.product-details-information-tab-title {
+	@extend .content-tabs-title;
+}
+
+.product-details-information-tab-content {
+	@extend .tab-content;
+}
+
+.product-details-information-tab-content-container {
+    ul,
+    ul li {
+        list-style-type: disc;
+        list-style-position: inside;
+     }
+     ol,
+     ol li {
+        list-style-type: decimal;
+        list-style-position: inside;
+     }
+     ol li::before {
+         content: '';
+         width: 10px;
+         display: inline-block;
+     }
+}
+
+.product-details-information-tab-content-panel {
+	@extend .tab-content-panel;
+	padding-top: $sc-padding-lv4;
+}
+
+.product-details-information-tab-content-panel-title {
+	@extend .tab-content-panel-title;
+}
+
+.product-details-information-tab-content-container {
+}
+
+.product-details-information-tab-action {
+	@extend .tab-action;
+}
+
+.product-details-information-tab-action-more{
+	@extend .tab-action-more;
+	display:none;
+	@media (min-width: $screen-sm-min){
+      display:block;
+  	}
+}
+
+.product-details-information-tab-action-less{
+	@extend .tab-action-less;
+}
+
+.product-details-information-tab-content.show {
+	.product-details-information-tab-content-panel {
+		max-height: 100%;
+	}
+	.product-details-information-tab-action-less {
+		display: block;
+	}
+	.product-details-information-tab-action-more {
+		display: none;
+	}
+}
+.product-details-information-main-bottom-banner {
+	margin-bottom: $sc-margin-lv4;
+}
+
+//Pusher button
+.product-details-information-pusher {
+	@extend .push-button-secondary;
+	margin-bottom: $sc-margin-lv3;
+	position: relative;
+	font-size: $sc-font-size-m;
+
+	i {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		height: 26px;
+		margin-top: -12px;
+	}
+}
+.product-details-information-hint {
+	margin-top: $sc-margin-lv3;
+	color: $sc-color-copy;
+	padding-right: $sc-padding-lv3;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.product-details-information-pusher {
+	@extend .push-button-secondary;
+	margin-bottom: $sc-margin-lv3;
+	position: relative;
+	font-size: $sc-font-size-m;
+
+	i {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		height: 26px;
+		margin-top: -12px;
+	}
+}
+
+[data-action="sc-pushing"].product-details-information-content {
+	padding-bottom: $sc-padding-lv2;
+}
+
+[data-action="sc-pushing"] .product-details-information-tab-content{
+	padding: $sc-padding-lv3 $sc-padding-lv6 $sc-padding-lv6 0;
+}
+.product-details-information-content-container {}
+
+// TODO: USED FOR THREADS THEME
+// PDP UPDATES FOR ALL DEVICES
+.product-details-information-content-tabs {
+    display: none;
+}
+
+.product-details-information-tab-content-panel {
+    height: auto;
+    max-height: none;
+    opacity: 1;
+    padding: 0 $sc-padding-lv1 $sc-padding-lv8;
+}
+
+@media (max-width: $screen-sm-min) {
+    .product-details-information-content {
+        // PUSHER BUTTON
+        .product-details-information-pusher {
+            display: none;
+        }
+        // OVERRIDE SC-PUSHABLE-XS STYLES
+        // ALWAYS DISPLAY CONTENT
+        .product-details-information-tab-content-panel {
+            position: static;
+            // padding: 0 $sc-padding-lv1 $sc-padding-lv8;
+            // HIDE BACK BUTTON
+            .sc-pusher-header {
+                display: none;
+            }
+            // ONLY SHOW TAB TITLE ON MOBILE - UPDATES TO TPL
+            .product-details-information-tab-content-panel-title {
+                // display: block;
+                // @media (min-width: $screen-sm-min) {
+                //     display: none;
+                // }
+            }
+        }
+    }
+}
+

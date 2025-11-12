@@ -1,0 +1,91 @@
+{
+    "name": "SDBBackorderHistory",
+    "fantasyName": "SDBBackorderHistory",
+    "vendor": "SuiteDB",
+    "version": "1.0.7",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Manage orders with backorder items",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBBackorderHistory.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SDBBackorderHistory/Configuration/SDBBackorderHistory.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/SDBBackorderHistory/Sass/_sdbbackorderhistory-sdbbackorderhistory.scss"
+        },
+        "files": [
+            "Modules/SDBBackorderHistory/Sass/_sdbbackorderhistory-sdbbackorderhistory.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBBackorderHistory/Templates/suitedb_sdbbackorderhistory_sdbbackorderhistory.tpl"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/SDBBackorderHistory/Templates/suitedb_sdbbackorderhistory_sdbbackorderhistory.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.js",
+            "shopping": "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.js",
+                    "Modules/SDBBackorderHistory/JavaScript/SDBBackorderHistory.View.js",
+                    "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.Model.js",
+                    "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.SS2Model.js"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.js",
+                    "Modules/SDBBackorderHistory/JavaScript/SDBBackorderHistory.View.js",
+                    "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.Model.js",
+                    "Modules/SDBBackorderHistory/JavaScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SDBBackorderHistory/SuiteScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.js",
+        "files": [
+            "Modules/SDBBackorderHistory/SuiteScript/SuiteDB.SDBBackorderHistory.SDBBackorderHistory.js",
+            "Modules/SDBBackorderHistory/SuiteScript/SDBBackorderHistory.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace/SDBBackorderHistory",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBBackorderHistory/SuiteScript2/SDBBackorderHistory.Service.ss"
+        ]
+    }
+}

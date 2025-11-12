@@ -1,0 +1,53 @@
+/* Edited for Threads Theme */
+
+// Breadcrumb
+//
+// Breadcrumbs allow users to know the current location on a hierarchically structured website.
+// They are commonly used to navigate back to a higher level of hierarchy.
+//
+// Markup:
+// <div class="breadcrumb">
+//   <ul>
+//     <li class="breadcrumb-item"><a href="#">Home</a></li> <span class="breadcrumb-divider">/</span>
+//     <li class="breadcrumb-item"><a href="#">Category</a></li> <span class="breadcrumb-divider">/</span>
+//     <li class="breadcrumb-item">Item</li>
+//   </ul>
+// </div>
+//
+// Styleguide 2.7.1
+
+// height is based of padding - use dev tools
+$sc-breadcrumb-height: 42px; // used on category landing page to move up category heading beneath the header
+
+.breadcrumb {
+	display: none;
+
+	@media(min-width: $screen-md-min) {
+		clear: both;
+		padding-top: $sc-padding-lv4;
+		display: block;
+	}
+}
+
+.breadcrumb-item {
+    display: inline;
+    
+    a {
+        color: $sc-color-theme;
+    }
+}
+
+.breadcrumb-item-active {
+	@extend .breadcrumb-item;
+	color: $sc-color-primary;
+}
+
+.breadcrumb-divider {
+	display: inline;
+	padding: 0 $sc-padding-lv1;
+}
+
+.breadcrumb-divider-icon {
+	@extend .icon-angle-right;
+	font-size: $sc-font-size-m;
+}

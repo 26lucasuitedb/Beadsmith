@@ -1,0 +1,63 @@
+{
+    "name": "SDBMultipleAddToCart",
+    "fantasyName": "SDBMultipleAddToCart",
+    "vendor": "SuiteDB",
+    "version": "1.1.1",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Add checkbox to select the items to add to the cart in the PLP page",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBMFAL/Sass/_sdbmfal-sdbmfal.scss"
+        },
+        "files": [
+            "Modules/SDBMFAL/Sass/_sdbmfal-sdbmfal.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBMFAL/Templates/suitedb_sdbmfal_sdbmfal.tpl",
+                    "Modules/SDBMFAL/Templates/suitedb_sdbmfal_add_to_cart_button.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SDBMFAL/JavaScript/SuiteDB.SDBMFAL.SDBMFAL.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBMFAL/JavaScript/SuiteDB.SDBMFAL.SDBMFAL.js",
+                    "Modules/SDBMFAL/JavaScript/SDBMFAL.View.js",
+                    "Modules/SDBMFAL/JavaScript/SuiteDB.SDBMFAL.SDBMFAL.Model.js",
+                    "Modules/SDBMFAL/JavaScript/SDBMFAL.AddToCartButton.View.js",
+                    "Modules/SDBMFAL/JavaScript/markedItems.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/SDBMultipleAddToCart",
+    "suitescript2": {
+        "files": []
+    }
+}

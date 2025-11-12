@@ -1,0 +1,305 @@
+/* Edited for Threads Theme */
+
+///////////////////////////////////////////////////////////////
+//header secondary nav
+.header-menu-secondary-nav {
+    @extend .container;
+    @include site-max-width-container;
+}
+
+///////////////////////////////////////////////////////////////
+//header search
+
+.header-menu-search {
+    float: right;
+
+    @media (min-width: $screen-md-min) {
+        padding-right: $sc-padding-lv3;
+    }
+}
+
+.header-menu-search-link {
+	font-size: $sc-font-size-xl;
+	background: none;
+	color: $sc-header-search-icon-color;
+	cursor: pointer;
+	position: relative;
+	line-height: 34px;
+}
+.header-menu-search-link:hover {
+	color: $sc-header-search-icon-color-hover;
+}
+.header-menu-search-link.active {
+	color: $sc-header-search-icon-color-active;
+}
+
+.header-menu-search-icon {
+	font-size: $sc-font-size-xxl;
+}
+
+.header-menu-searchmobile-link {
+	margin-right: 0;
+	cursor: pointer;
+	background: none;
+
+	@media (min-width: $screen-sm-min) {
+		margin-right: $sc-margin-lv2;
+	}
+}
+
+.header-menu-searchmobile-link.active {
+	background: $sc-color-theme-background;
+}
+
+///////////////////////////////////////////////////////////////
+//header maxi menu
+
+.header-menu-level1 {
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.header-menu-level1 > li {
+    float: left;
+    position: relative;
+    padding: 0 $sc-padding-lv1;
+
+    &[data-toggle="categories-menu"]:hover > a {
+        border-bottom: $sc-main-navigation-link-hover-border-bottom-width solid $sc-main-navigation-link-hover-border-color;
+        color: $sc-main-navigation-link-hover-color;
+    }
+}
+
+.header-menu-level1-anchor {
+	display: block;
+	position: relative;
+
+	padding: $sc-padding-lv2;
+	margin-right: $sc-main-navigation-link-margin-right;
+
+	color: $sc-main-navigation-link-color;
+    background-color: $sc-main-navigation-link-background-color;
+    font-size: $sc-main-navigation-link-font-size;
+    font-weight: $sc-font-weight-semibold;
+    text-transform: $sc-main-navigation-link-text-transform;
+    letter-spacing: $sc-main-navigation-link-letter-spacing;
+
+    border: solid $sc-main-navigation-link-border-color;
+    border-width: $sc-main-navigation-link-border-top-width 0 $sc-main-navigation-link-border-bottom-width 0;
+
+    &:hover, &:focus{
+		color: $sc-main-navigation-link-hover-color;
+		background-color: $sc-main-navigation-link-hover-background-color;
+
+    border: solid $sc-main-navigation-link-hover-border-color;
+    border-width: $sc-main-navigation-link-hover-border-top-width 0 $sc-main-navigation-link-hover-border-bottom-width 0;
+
+	}
+
+	&:active {
+		color: $sc-main-navigation-link-active-color;
+		background-color: $sc-main-navigation-link-active-background-color;
+
+    border: solid $sc-main-navigation-link-active-border-color;
+    border-width: $sc-main-navigation-link-active-border-top-width 0 $sc-main-navigation-link-active-border-bottom-width 0;
+    }
+}
+
+.open .header-menu-level1-anchor{
+	color: $sc-main-navigation-link-active-color;
+}
+
+.header-menu-home-anchor,
+.header-menu-shop-anchor{
+	@extend .header-menu-level1-anchor;
+}
+
+//maxi menu level 2
+.header-menu-back {
+	display: none;
+}
+
+.header-menu-level2 > li {
+	// float: left;
+	// width: 20%;
+	// padding-right: $sc-padding-lv6;
+}
+
+.header-menu-level2-anchor {
+	text-transform: $sc-main-navigation-submenu-heading-text-transform;
+	text-decoration: $sc-main-navigation-submenu-heading-text-decoration;
+	font-weight: $sc-font-weight-light;
+	color: $sc-main-navigation-submenu-heading-color;
+    //padding-bottom: $sc-padding-lv1;
+    padding: $sc-padding-lv1 $sc-padding-lv3;
+	border-bottom: $sc-main-navigation-submenu-heading-border-width solid $sc-main-navigation-submenu-heading-border-color;
+	display: block;
+
+	&:hover {
+		color: $sc-color-copy;
+	}
+}
+
+//maxi menu level 3
+.header-menu-level3-anchor {
+	display: block;
+	padding: $sc-padding-lv1 0;
+	color: $sc-main-navigation-submenu-link-color;
+
+	&:hover, &:focus {
+        background-color: darken($sc-main-navigation-submenu-background-color, 5);
+		color: $sc-main-navigation-submenu-link-hover-color;
+	}
+
+	&:active, &.active {
+        background-color: darken($sc-main-navigation-submenu-background-color, 5);
+		color: $sc-main-navigation-submenu-link-active-color;
+	}
+}
+
+//container fix for maxi menu on desktop
+.header-menu-push-icon, .header-menu-pop-icon {
+	display: none;
+}
+
+.header-menu-level-container {
+	background-color: $sc-main-navigation-submenu-background-color;
+	position: absolute;
+	top: 100%;
+	left: $sc-padding-lv3; // amount of parent link padding
+	min-width: 200px;
+	//min-height: 150px;
+	z-index: 1003;
+	padding: 1px 0;
+    border-bottom: 2px solid $sc-color-primary;
+    border-top: 1px solid $sc-color-primary;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      visibility ($sc-animation-base-duration * 2) ease-in-out,
+      opacity ($sc-animation-base-duration * 2) ease-in-out;
+
+	> li {
+		// @extend .container;
+        > ul {
+            > li {
+                position: relative;
+                &.categories-menu-arrow {
+                    &:after {
+                        border: solid rgba(0, 0, 0, 0.3);
+                        border-width: 2px 2px 0 0;
+                        display: block;
+                        content: '';
+                        transform: rotate(45deg);
+                        width: 6px;
+                        height: 6px;
+                        position: absolute;
+                        z-index: 1;
+                        right: 15px;
+                        top: 50%;
+                        margin-top: -3px;
+                    }
+                }
+                > ul {
+                    padding: 0;
+                    pointer-events: none;
+                    border-bottom: 2px solid $sc-color-primary;
+                    border-top: 1px solid $sc-color-primary;
+                    opacity: 0;
+                    position: absolute;
+                    left: 85%;
+                    background: $sc-main-navigation-submenu-background-color;
+                    width: 100%;
+                    top: -1px;
+                    text-align: left;
+                    //@include box-shadow(0 6px 12px transparentize($sc-theme-color-overlay, 1-0.175));
+                    transition:
+                        opacity $sc-animation-base-duration ease-out,
+                        left $sc-animation-base-duration ease-in-out;
+
+                    > li {
+                        a {
+                            @extend .header-menu-level2-anchor;
+                        }
+                    }
+                }
+                &:hover, &:active, &:focus {
+                    > a {
+                        background-color: darken($sc-main-navigation-submenu-background-color, 5);
+                    }
+                    > ul {
+                        pointer-events: auto;
+                        opacity: 1;
+                        left: 100%;
+                        //changing values for a quick roll-back
+                        transition:
+                            opacity 0.3s ease-out,
+                            left 0.1s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//when theme goes to standard/low screen sizes, we need to move the last drop for the right side.
+@media (max-width: 1300px) {
+
+  .header-menu-level1 > li:last-child {
+    .header-menu-level-container {
+      > li {
+        > ul {
+          > li {
+            > ul {
+              right: 85%;
+              left: inherit;
+            }
+            &:hover, &:active, &:focus {
+              > ul {
+                right: 100%;
+                left: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+//maxi menu opened
+.open .header-menu-level-container {
+    visibility: visible;
+    opacity: 1;
+}
+
+// TODO: NOT USING - KEEPING JUST IN CASE
+// .open .header-menu-level1-anchor:before{
+// 	position: absolute;
+// 	top: 47px;
+// 	left: 50%;
+// 	margin-left: -7.5px;
+// 	display: inline-block;
+// 	border-right: 7px solid transparent;
+// 	border-bottom: 7px solid $sc-neutral-shade-0;
+// 	border-left: 7px solid transparent;
+// 	border-bottom-color: transparentize($sc-neutral-shade-500, 1-0.2);
+// 	content: '';
+// }
+
+// .open .header-menu-level1-anchor:after{
+// 	position: absolute;
+// 	top: 48px;
+// 	left: 50%;
+// 	margin-left: -6.5px;
+// 	display: inline-block;
+// 	border-right: 6px solid transparent;
+// 	border-bottom: 6px solid $sc-neutral-shade-0;
+// 	border-left: 6px solid transparent;
+// 	content: '';
+// 	z-index: 9999;
+// }
+

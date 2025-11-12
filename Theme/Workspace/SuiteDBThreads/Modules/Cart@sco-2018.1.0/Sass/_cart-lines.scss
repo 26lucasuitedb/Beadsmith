@@ -1,0 +1,126 @@
+/* Edited for Threads Theme */
+
+.cart-lines-name{
+	//margin-bottom:$sc-margin-lv2;
+	line-height: normal;
+	font-size: $sc-font-size-xxxl;
+	font-weight: $sc-font-weight-light;
+}
+
+.cart-lines-name-link{
+	@extend .medium-title-navigable;
+	font-weight: $sc-font-weight-light;
+	@media (min-width: $screen-sm-min) {
+		font-size: $sc-font-size-xxxl;
+	}
+}
+
+.cart-lines-name-viewonly{
+	@extend .medium-title-viewonly;
+	font-weight: $sc-font-weight-light;
+	@media (min-width: $screen-sm-min) {
+		font-size: $sc-font-size-xxxl;
+	}
+}
+
+.cart-lines-thumbnail{
+	img{
+		//width:$img-larger;
+	}
+}
+
+.cart-lines-price{
+	margin-bottom: $sc-margin-lv5;
+    padding-bottom: $sc-padding-lv1;
+    border-bottom: 1px solid $sc-color-theme-border;
+}
+
+.cart-lines-price .transaction-line-views-price-lead{
+	@extend .middle-price;
+	color: $sc-color-secondary;
+    @media (min-width: $screen-md-min) {
+        font-size: 1.35rem;
+    }
+}
+
+.cart-lines-options{
+	.cart-option{
+		font-size:$sc-font-size-m;
+	}
+}
+
+.cart-lines-row {
+	//@extend .row;
+	display: flex;
+	flex-flow: row nowrap;
+
+	margin:0 0 $sc-margin-lv4 0;
+	border: 1px solid $sc-color-theme-border-light;
+	padding: $sc-padding-lv3;
+
+	@media (min-width: $screen-sm-min) {
+		padding: $sc-padding-lv5;
+	}
+}
+
+.cart-lines-table-image {
+	width: 30%;
+}
+
+.cart-lines-table-details {
+	width: 70%;
+}
+
+.cart-lines-table-first {
+	//@extend .col-xs-4;
+	//@extend .col-lg-3;
+	padding-left: 0;
+}
+
+.cart-lines-table-header {
+	//@extend .col-xs-8;
+	//@extend .col-lg-9;
+	padding-left: $sc-padding-lv3;
+
+	@media (min-width: $screen-sm-min) {
+		padding-left: $sc-padding-lv6;
+	}
+}
+
+.cart-lines-table-item-spec {
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: $screen-lg-min) {
+		flex-flow: row nowrap;
+	}
+}
+
+.cart-lines-table-middle {
+	//@extend .col-xs-8;
+	//@extend .col-lg-5;
+	flex: 0 1 auto;
+	padding-left: $sc-padding-lv3;
+
+	@media (min-width: $screen-sm-min) {
+		padding-left: $sc-padding-lv6;
+	}
+}
+
+.cart-lines-table-last {
+	//@extend .col-xs-12;
+	//@extend .col-lg-4;
+	flex: 0 1 auto;
+}
+
+.cart-lines-alert-placeholder {
+	margin:$sc-margin-lv2 0;
+}
+
+.cart-lines-shipping-method {
+	margin-top: $sc-margin-lv3;
+}
+
+.cart-lines-stock{}
+.cart-lines-summary{}
+

@@ -1,0 +1,156 @@
+/* Edited for Threads Theme */
+
+.facets-item-cell-grid {
+  @extend .item-cell;
+  .cart-add-to-cart-button-container {
+    width: 100%;
+  }
+  .cart-add-to-cart-button-button {
+    padding: 20px 20px;
+  }
+
+  .cart-quickaddtocart-price {
+    // margin-bottom:$sc-margin-lv2;
+  }
+}
+
+.facets-item-cell-grid-quick-view-wrapper {
+  @extend .item-cell-quick-view-wrapper;
+}
+
+.facets-item-cell-grid-quick-view-link {
+  @extend .item-cell-quick-view-link;
+}
+
+.facets-item-cell-grid-image-wrapper {
+  position: relative;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.facets-item-cell-grid-link-image {
+}
+
+.facets-item-cell-grid-quick-view-icon {
+}
+
+.facets-item-cell-grid-stock {
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0;
+}
+
+.facets-item-cell-grid-quantity-stock {
+  padding: 0;
+  font-size: 1em;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.facets-item-cell-grid-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.facets-item-cell-grid-table-row {
+  border-bottom: 1px solid black;
+}
+
+.facets-item-cell-grid-table-row:last-child {
+  border: 0;
+}
+
+.facets-item-cell-grid-table-cell {
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* .facets-item-cell-grid-stock-qty {
+	color: green;
+} */
+
+.facets-item-cell-grid-details {
+  text-align: left;
+  .product-line-stock {
+    text-align: left;
+  }
+  .cart-add-to-cart-button-container {
+    padding: 0 0 $sc-padding-lv3 0;
+  }
+}
+
+.facets-item-cell-grid-image {
+  @extend .item-cell-image;
+  width: auto;
+  height: auto;
+}
+
+.facets-item-cell-grid-title {
+  @extend .item-cell-title;
+  height: 2.5em !important;
+}
+
+.facets-item-cell-grid-price {
+  @extend .small-price;
+  // margin-bottom:$sc-margin-lv2;
+}
+
+.facets-item-cell-grid-rating {
+  text-align: left;
+  display: inline-block;
+}
+
+.facets-item-cell-grid {
+  .global-views-star-rating-area {
+    margin-bottom: $sc-margin-lv2;
+  }
+}
+
+.facets-item-cell-grid-stock-message {
+  text-align: left;
+  width: fit-content !important;
+  display: block;
+}
+
+.facets-item-cell-grid-stock-message-text {
+  color: #c01a29;
+  background-color: #fdf0f2;
+  border: 1px solid #f1ced1;
+  font-size: 1em;
+  padding: 9px 10px;
+}
+
+.facets-item-cell-grid-quantity-stock-available {
+  padding: 10px 0;
+  font-size: 1em;
+  display: inline-block;
+  height: 3.5em;
+  margin: 0.5em 0;
+  align-content: center;
+}
+
+.facets-item-cell-grid-stock-message-span {
+  margin-right: 5px;
+}
+
+.facets-item-cell-grid-stock-message-text-container {
+  text-align: left;
+}
+
+
+.header-profile-login-link-grid{
+  text-align: left;
+  padding: 0;
+  color: #626362;
+  display: block;
+  min-width: 44px;
+  height: 2em;
+  text-align: left;
+  position: relative;
+  margin: 5px 0;
+}

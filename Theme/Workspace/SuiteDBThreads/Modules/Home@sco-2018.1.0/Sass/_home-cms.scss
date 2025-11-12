@@ -1,0 +1,33 @@
+.home-cms {
+  @extend .container;
+}
+.home-cms-page-banner-bottom-content,
+.home-cms-page-banner-two-columns {
+  @extend .clearfix;
+}
+.home-cms-page-banner-bottom {
+  @extend .col-sm-4;
+}
+.home-cms-page-banner-two {
+  @extend .col-sm-6;
+}
+.home-cms-page-banner-bottom-main {
+  @extend .col-sm-12;
+}
+
+.home-cms-zone {
+  p,
+  pre,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  blockquote {
+    color: $sc-color-copy-dark;
+  }
+  p {
+    text-align: center;
+  }
+}
+

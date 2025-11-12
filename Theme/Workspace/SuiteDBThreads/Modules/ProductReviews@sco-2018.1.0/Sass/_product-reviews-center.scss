@@ -1,0 +1,371 @@
+/* Edited for Threads Theme */
+
+$sc-color-list-header-view-accordion-body-header: #f1f7fa;
+
+[data-action="sc-pushing"] .product-reviews-center {
+  padding: 0;
+
+  @media (min-width: $screen-sm-min){
+    padding: $sc-padding-lv4;
+  }
+}
+
+.product-reviews-center {
+  @extend .row;
+}
+
+.product-reviews-center-container{
+  @extend .col-md-12;
+  @extend .col-lg-12;
+
+  clear:both;
+  display:block;
+  overflow:hidden;
+  padding-top:$sc-padding-lv4;
+  padding-bottom:$sc-padding-lv4;
+  margin-top:-$sc-margin-lv4;
+
+  @media (min-width: $screen-sm-min){
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+[data-action="sc-pushing"] .product-reviews-center-review-container {
+  margin: 0 -20px;
+  padding: 0 $sc-padding-lv4 $sc-padding-lv4 $sc-padding-lv4;
+  background: $sc-neutral-shade-0;
+
+  @media (min-width: $screen-sm-min){
+    padding: $sc-padding-lv4;
+    border-top:1px solid $sc-color-theme-border-light;
+  }
+
+}
+
+[data-action="sc-pushing"] .product-reviews-center-container {
+  padding: $sc-padding-lv4 0;
+}
+
+.product-reviews-center-container-header{
+  padding: 0 0 $sc-padding-lv3;
+
+  .global-views-star-rating {
+    margin-bottom: $sc-margin-lv3;
+  }
+
+  @media (min-width: $screen-sm-min){
+    padding: 0px;
+  }
+
+  &-no-reviews-available {
+      h3 {
+          @extend %product-details-title-styles;
+          font-weight: $sc-font-weight-light;
+          margin-bottom: 10px;
+      }
+      h4 {
+          font-weight: $sc-font-weight-semibold;
+          margin-bottom: 10px;
+      }
+  }
+}
+
+.product-reviews-center-container-header-title-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $sc-color-theme-border;
+    margin-bottom: $sc-margin-lv4;
+
+    & > div {
+        flex: 1;
+    }
+}
+
+.product-reviews-center-container-header-list-header-view-container {
+    display: none; 
+    @media (min-width: $screen-md-min) {
+        display: block;
+    }
+
+    .list-header-view {
+        border-bottom: 0;
+    }
+    .list-header-view-sorts {
+        margin-bottom: 0;
+    }
+    .list-header-view-paginator {
+        display: none;
+    }
+}
+
+.product-reviews-center-container-list-header-view-container-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    .list-header-view {
+        width: 100%;
+        border-bottom: 0;
+    }
+
+    .list-header-view-accordion-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: none;
+    }
+}
+
+.product-reviews-center-container-header-title {
+    border-bottom: 0;
+    font-size: $sc-font-size-xxxl;
+    margin-bottom: $sc-margin-lv4;
+
+    @media (max-width: $screen-md-min) {
+        padding-bottom: $sc-padding-lv2;
+    }
+}
+.product-reviews-center-container-header-number {
+    font-weight: $sc-font-weight-light;
+    margin-bottom: $sc-margin-lv2;
+}
+
+.product-reviews-center-container-wrapper {
+    width: 90%;
+    border: 1px solid $sc-color-theme-100;
+    margin: $sc-margin-lv8 auto;
+    padding: $sc-padding-lv4 $sc-padding-lv5;
+    @extend .clearfix;
+
+    @media (min-width: $screen-sm-min) {
+        width: 60%;
+        padding: $sc-padding-lv4 $sc-padding-lv8;
+    }
+}
+
+.product-reviews-center-global-views-rating-by-star-container {
+    width: 100%;
+
+    .global-views-rating-by-star {
+        ul {
+            display: flex;
+            flex: 1;
+
+            li {
+                padding: 0 $sc-padding-lv3 0 0;
+                flex: 1;
+
+                &.global-views-rating-by-star-percentage-area {
+                    flex: 4;
+                }
+
+                &.global-views-rating-by-star-second-label {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.product-reviews-center-container-footer {
+//   @extend .col-xs-12;
+//   @extend .col-sm-12;
+//   @extend .col-md-12;
+//   @extend .col-lg-12;
+  @extend .product-reviews-center-review-container;
+  @extend .clearfix;
+  float: none;
+  margin: $sc-margin-lv4 0;
+  padding: 0 $sc-padding-lv3 $sc-padding-lv8;
+  text-align: center;
+  border-bottom: 1px solid $sc-color-theme-100;
+}
+
+.product-reviews-center-container-footer-button {
+  @extend .button-secondary;
+  @extend .button-medium;
+  width:100%;
+  text-align: center;
+
+  @media (min-width: $screen-sm-min){
+    width: auto;
+  }
+}
+.product-reviews-center-container-button {
+  @extend .button-secondary;
+  @extend .button-small;
+  text-align: center;
+  margin-left: $sc-margin-lv2;
+
+  @media (min-width: $screen-sm-min){
+    width: auto;
+  }
+}
+[data-pusher="sc-pushable-xs"] .product-reviews-center-list .backbone-collection-view-row {
+  @extend .row;
+}
+.product-reviews-center-list {
+  @extend .col-md-12;
+  @extend .col-lg-12;
+
+  @media (max-width: $screen-md-min) {
+      margin-top: $sc-margin-lv4;
+  }
+
+  .list-header-view-sorts,
+  .list-header-view-filters {
+    padding: 0;
+  }
+
+  .list-header-view-accordion-body-header {
+
+    padding: $sc-padding-lv4 $sc-padding-lv2;
+    background-color: $sc-color-list-header-view-accordion-body-header;
+    margin-top: $sc-margin-lv4;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $sc-color-theme-border-light;
+    border-top: 1px solid $sc-color-theme-border-light;
+
+    @media (min-width: $screen-sm-min){
+      padding: 0;
+      margin: 0;
+      border: none;
+      background-color: initial;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .list-header-view-accordion-body {
+    margin: 0 (-$sc-margin-lv4);
+    padding-bottom: 0;
+
+    @media (min-width: $screen-sm-min){
+      margin: 0;
+    }
+  }
+}
+
+.product-reviews-center-list .list-header-view {
+  border: none;
+  margin-bottom: $sc-margin-lv2;
+
+  @media (min-width: $screen-md-min) {
+    .list-header-view-sorts {
+      margin-bottom: 0;
+    }
+
+    .list-header-view-paginator {
+      margin: 0;
+    }
+  }
+}
+
+.product-reviews-center-content {
+  background: $sc-color-theme-background;
+  margin-bottom: $sc-margin-lv3;
+
+  @media (min-width: $screen-sm-min) {
+    background: transparent;
+    margin-bottom: 0px;
+  }
+}
+.product-reviews-center-pusher {
+  @extend .push-button-secondary;
+
+  .product-reviews-center-pusher-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0;
+  }
+
+  .product-reviews-center-pusher-rating {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .global-views-star-rating-area {
+    margin-left: $sc-margin-lv2;
+    float: right;
+  }
+
+  i.product-reviews-center-pusher-icon {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    font-size: $sc-font-size-xxl;
+    line-height: $sc-font-size-xxl;
+    height: 0;
+  }
+}
+
+[data-type="sc-pusher"] {
+  .global-views-star-rating-empty, .global-views-star-rating-filled {
+    font-size: 20px;
+  }
+}
+
+.product-reviews-center-rating-header {
+  .global-views-star-rating-area {
+    margin-right: $sc-margin-lv1;
+  }
+  .global-views-star-rating i {
+    font-size: 20px;
+  }
+}
+
+.product-reviews-center-review-container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.product-reviews-center-footer {
+  @extend .col-md-12;
+  @extend .col-lg-12;
+}
+
+.product-reviews-center-more-info-content-container{
+  background: $sc-color-theme-background;
+  overflow-x: hidden;
+
+  @media (min-width: $screen-sm-min) {
+    background: transparent;
+  }
+}
+[data-action="sc-pushing"].product-reviews-center-more-info-content-container {
+  padding-bottom: $sc-padding-lv2;
+}
+
+// TODO: USED FOR THREADS THEME
+// PDP UPDATES FOR MOBILE
+// KEEP DESKTOP & TABLET VIEW ON MOBILE
+@media (max-width: $screen-sm-min) {
+    .product-reviews-center-content {
+        // HIDE PUSHER
+        .product-reviews-center-pusher {
+            display: none;
+        }
+        // KEEP POSITIONING - ON SCREEN
+        .product-reviews-center-more-info-content-container {
+            position: static;
+            background-color: $sc-neutral-shade-0;
+            padding: 0 $sc-padding-lv1 $sc-padding-lv8;
+            // HIDE BACK BUTTON
+            .sc-pusher-header {
+                display: none;
+            }
+            // RESIZE FOOTER BUTTON
+            .product-reviews-center-container-footer-button {
+                width: auto;
+            }
+        }
+    }
+}
+

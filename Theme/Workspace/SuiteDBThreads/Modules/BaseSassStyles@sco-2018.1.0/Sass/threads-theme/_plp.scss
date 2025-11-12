@@ -1,0 +1,45 @@
+// PLP Subcategory variables
+$sc-subcategory-width: 48%; /* editable({"type": "string", "label": "Subcategory Mobile Width"}) */
+$sc-subcategory-desktop-width: 23%; /* editable({"type": "string", "label": "Subcategory Desktop Width"}) */
+$sc-subcategory-height: 125px; /* editable({"type": "string", "label": "Subcategory Cell Height"}) */
+$sc-subcategory-overlay-color: #000; /* editable({"type": "color", "label": "Subcategory Overlay Color"}) */
+$sc-subcategory-overlay-opacity: 0; /* editable({
+	"type": "string",
+	"label": "Cell Overlay Opacity",
+	"options": [
+		{"value": "0", "text": "None"},
+		{"value": "0.3", "text": "Light"},
+		{"value": "0.5", "text": "Dark"}
+	]
+}) */
+
+$sc-subcategory-title-alignment: center; /* editable({
+	"type": "string",
+	"label": "Subcategory Title Alignment",
+	"options": [
+		{"value": "flex-start", "text": "Top"},
+		{"value": "center", "text": "Middle"},
+		{"value": "flex-end", "text": "Bottom"}
+	]
+}) */
+$sc-subcategory-title-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Subcategory Title Color"}) */
+$sc-subcategory-title-font-size: 20px; /* editable({"type": "string", "label": "Subcategory Title Font Size"}) */
+$sc-subcategory-title-text-transform: uppercase; /* editable({
+	"type": "string",
+	"label": "Subcategory Text Transform",
+	"options": [
+		{"value": "none", "text": "none"},
+		{"value": "uppercase", "text": "uppercase"},
+		{"value": "lowercase", "text": "lowercase"},
+		{"value": "capitalize", "text": "capitalize"}
+	]
+}) */
+$sc-subcategory-title-font-style: italic;  
+/* editable({
+	"type": "string",
+	"label": "Title Font Style",
+	"options": [
+		{"value": "normal", "text": "normal"},
+		{"value": "italic", "text": "italic"}
+	]
+}) */

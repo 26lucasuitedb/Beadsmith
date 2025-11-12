@@ -1,0 +1,98 @@
+{
+    "name": "SDBEnhancedMenu",
+    "fantasyName": "SDBEnhancedMenu",
+    "vendor": "SuiteDB",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Extension overrides the header tpl for easier navigation",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SDBEnhancedMenu/Configuration/EnhancedMenu.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss",
+            "myaccount": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss",
+            "checkout": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss"
+        },
+        "files": [
+            "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBEnhancedMenu/Templates/suitedb_sdbenhancedmenu_sdbenhancedmenu.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/SDBEnhancedMenu/Templates/suitedb_sdbenhancedmenu_sdbenhancedmenu.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/SDBEnhancedMenu/Templates/suitedb_sdbenhancedmenu_sdbenhancedmenu.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.js",
+            "myaccount": "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.js",
+            "checkout": "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SDBEnhancedMenu.View.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.Model.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.SS2Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SDBEnhancedMenu.View.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.Model.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.SS2Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SDBEnhancedMenu.View.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.Model.js",
+                    "Modules/SDBEnhancedMenu/JavaScript/SuiteDB.SDBEnhancedMenu.SDBEnhancedMenu.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/SDBEnhancedMenu",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBEnhancedMenu/SuiteScript2/SDBEnhancedMenu.Service.ss"
+        ]
+    }
+}

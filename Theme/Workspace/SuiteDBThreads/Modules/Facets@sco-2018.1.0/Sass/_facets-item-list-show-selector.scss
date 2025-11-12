@@ -1,0 +1,91 @@
+/* Edited for Threads Theme */
+
+// .facets-item-list-show-selector {
+// 	@extend .list-header-filter-input;
+// }
+
+.facets-item-list-show-selector-dropdown-wrapper {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $screen-md-min) {
+        justify-content: center;
+    }
+}
+
+.facets-item-list-show-selector-dropdown-container {
+    @extend .dropdown;
+
+    &.open {
+        .facets-item-list-show-selector {
+            color: $sc-button-secondary-hover-text-color;
+
+            &:focus:hover {
+                color: $sc-neutral-shade-0;
+            }
+        }
+        .caret {
+            @include transform(rotate(180deg));
+        }
+    }
+}
+
+.facets-item-list-show-selector-label {
+    font-weight: $sc-font-weight-semibold;
+    margin-right: $sc-margin-lv1;
+}
+
+.facets-item-list-show-selector {
+    @extend .sc-flyout-control;
+    @extend .button-medium;
+    @extend .button-secondary;
+    min-width: 160px;
+    font-weight: $sc-font-weight-normal;
+    text-align: left;
+    text-transform: none;
+    padding: 0 $sc-padding-lv2;
+    border: 0;
+    border-bottom: 1px solid $sc-color-theme-border;
+    @include transition(background-color $sc-animation-base-duration ease);
+
+    &:focus:hover {
+        color: $sc-color-copy;
+    }
+}
+
+.facets-item-list-show-selector-dropdown-menu {
+    @extend .dropdown-menu;
+    min-width: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    @include border-radius(0);
+
+    li {
+        a {
+            padding: $sc-padding-lv1 $sc-padding-lv2;
+            background-color: transparent;
+
+            &:hover,
+            &:focus {
+                background-color: #e5e5e5;
+            }
+        }
+
+        &.active {
+            a {
+                font-weight: $sc-font-weight-semibold;
+                background-color: transparent;
+                // color: $sc-color-copy;
+                color: inherit;
+                
+                &:hover,
+                &:focus {
+                    // color: $sc-color-copy;
+                    color: inherit;
+                    background-color: #e5e5e5;
+                }
+            }
+        }
+    }
+}

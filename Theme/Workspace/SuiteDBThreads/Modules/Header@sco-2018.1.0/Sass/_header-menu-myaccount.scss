@@ -1,0 +1,110 @@
+/* Edited for Threads Theme */
+
+.header-menu-myaccount-back{
+	@extend .header-sidebar-menu-back;
+}
+
+.header-menu-myaccount-pop-icon {
+	@extend .header-sidebar-menu-pop-icon;
+}
+
+.header-menu-myaccount-menu-push-icon {
+	@extend .header-sidebar-menu-push-icon;
+}
+
+.header-sidebar-menu-wrapper .header-menu-myaccount-signout-link {
+	display: none;
+}
+
+.header-menu-myaccount a.active {
+	background-color: $sc-color-theme-background;
+}
+
+.header-menu-myaccount-level3{}
+
+//applies only to the myaccount menu on desktop header
+.header-menu-profile {
+
+	.header-menu-myaccount-anchor {
+		display: none;
+	}
+
+	.header-menu-myaccount-overview-anchor {
+		@media (min-width: $screen-sm-min) {
+			font-size: $sc-font-size-m;
+			float: left;
+			padding: $sc-padding-lv3 0;
+		}
+	}
+
+	.header-menu-myaccount-back {
+		display: none;
+	}
+
+	.header-menu-myaccount-menu-push-icon{
+		display:none;
+	}
+
+	.header-menu-myaccount-overview {
+		margin-bottom: $sc-margin-lv7;
+		border-bottom: 1px solid $sc-color-theme-border-light;
+		@extend .clearfix;
+	}
+
+	.header-menu-myaccount-item-level2 {
+		float: left;
+		width: 16%;
+		padding-right: $sc-padding-lv4;
+	}
+
+	.header-menu-myaccount-anchor-level2,
+	.header-menu-myaccount-span-level2 {
+        @extend .header-menu-level2-anchor;
+        border-bottom: 1px solid $sc-color-theme-border-light;
+        padding: 0 0 $sc-padding-lv1;
+        margin-bottom: $sc-margin-lv2;
+	}
+
+	.header-menu-myaccount-anchor-level3 {
+        @extend .header-menu-level3-anchor;
+
+        &:hover, &:focus {
+            color: $sc-color-link-hover;
+            background-color: transparent;
+        }
+
+        &:active, &.active {
+            color: $sc-color-link-hover;
+            background-color: transparent;
+        }
+	}
+
+	.header-menu-myaccount-signout-link {
+		float: right;
+		display:block;
+		padding: $sc-padding-lv3 0;
+	}
+
+	.header-menu-myaccount-signout-icon{
+		@extend .fa;
+		@extend %fa-sign-out;
+		font-size: $sc-font-size-m;
+	}
+}
+
+.header-menu-myaccount-level4 {
+
+	@media (min-width: $screen-md-min) {
+		display: none;
+	}
+}
+
+//Fix for my account header menu. Removing overview. Adding style for headers.
+.header-profile-menu-myaccount-container {
+	li {
+		a[name="Overview"] {
+			display: none;
+		}
+	}
+}
+

@@ -1,0 +1,135 @@
+/*
+	Sass Application Entry Point
+	Link all your sass dependencies in the right order
+
+	Example:
+	@import "other-sass-file.scss";
+	@import "../../<other module>/Sass/other-sass-file.scss";
+*/
+
+.sdbuploadordersmyacc-info-card {
+	@extend .info-card;
+}
+
+.sdbuploadordersmyacc-info-card-content {
+	@extend .info-card-content;
+	color: $sc-color-secondary;
+	font-weight: bold;
+}
+
+.wizard-header-title{
+	padding: $sc-padding-lv3;
+}
+
+.capture {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding-block: 10px;
+	gap: 15px;
+	border-top: 1px solid $sc-color-theme-border-light;
+}
+
+.upload-csv-top {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: $sc-padding-lv3;
+}
+
+.custom-file-upload {
+	cursor: pointer;
+	margin: 0;
+	width: 150px;
+	text-align: center;
+	padding: $sc-padding-lv1;
+	background-color: transparent;
+	border: 1px solid $sc-color-link;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.custom-file-upload:hover {
+	background-color:  $sc-color-primary;
+	color: white;
+}
+
+.icon-cloud-downloads {
+	@extend .fa;
+
+	&:before {
+		content: $fa-var-download;
+
+	}
+}
+
+.file-upload-main{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#file-upload {
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+#csvupload {
+	width: 150px;
+	background-color:  $sc-color-primary;;
+	padding: $sc-padding-lv1 $sc-padding-lv3;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: all 0.2s ease-in-out;
+	color: white;
+}
+
+#csvupload:hover {
+	background-color: #4e4e4e;
+}
+
+.order-main {
+	width: 100%;
+	min-height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: $sc-margin-lv6;
+	display: none;
+}
+
+.order-generated {
+	width: 100%;
+	min-height: 100px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $sc-color-theme-border-light;
+	gap: 8px;
+	padding: 20px;
+}
+
+@media screen and (max-width: $screen-sm) {
+
+	.capture{
+		flex-direction: column;
+
+		#csvupload {
+			width: 100%;
+		}
+	}
+
+	.file-upload-main {
+		flex-direction: column;
+
+		.custom-file-upload{
+			width: 100%;
+		}
+	}
+
+	.sdbuploadordersmyacc{
+		padding: 20px;
+	}
+}

@@ -1,0 +1,60 @@
+{
+    "name": "SDBCreditCardRemoval",
+    "fantasyName": "SDBCreditCardRemoval",
+    "vendor": "SuiteDB",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Credit Card Removal handler",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/SDBCreditCardRemoval/Sass/_sdbcreditcardremoval-sdbcreditcardremoval.scss"
+        },
+        "files": [
+            "Modules/SDBCreditCardRemoval/Sass/_sdbcreditcardremoval-sdbcreditcardremoval.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBCreditCardRemoval/Templates/suitedb_sdbcreditcardremoval_sdbcreditcardremoval.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/SDBCreditCardRemoval/JavaScript/SuiteDB.SDBCreditCardRemoval.SDBCreditCardRemoval.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBCreditCardRemoval/JavaScript/SuiteDB.SDBCreditCardRemoval.SDBCreditCardRemoval.js",
+                    "Modules/SDBCreditCardRemoval/JavaScript/SDBCreditCardRemoval.View.js",
+                    "Modules/SDBCreditCardRemoval/JavaScript/SuiteDB.SDBCreditCardRemoval.SDBCreditCardRemoval.Model.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/SDBCreditCardRemoval",
+    "suitescript2": {
+        "files": []
+    }
+}

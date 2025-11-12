@@ -1,0 +1,47 @@
+/* Edited for Threads Theme */
+
+// color picker
+$picker-large: 40px;
+$picker-medium: 25px;
+$picker-small: 20px;
+$picker-xsmall: 10px;
+
+//New color picker
+$picker-color-large: 40px;
+$picker-color-medium: 25px;
+$picker-color-small: 20px;
+$picker-color-xsmall: 15px;
+
+// images
+$img-larger: 185px;
+$img-large: 150px;
+$img-medium: 100px;
+$img-small: 60px;
+
+//target size
+$sc-target-size:44px;
+$sc-target-size-mobile:40px;
+
+$sc-flyout-arrow-height: 7px;
+$sc-flyout-arrow-shadow-height: $sc-flyout-arrow-height - 1;
+
+$sc-border-radius: 0;
+
+$sc-animation-base-duration: 100ms;
+
+// max width
+$sc-site-max-width: 1600px; /* editable({"type": "string", "label": "Max width", "description": "Value at which site stops being 100% width and shows the background."}) */
+
+// USE THIS MIXIN TO SET CUSTOM MAX-WIDTH CONTAINER
+// USAGE: @include site-max-width-container;
+@mixin site-max-width-container {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: $screen-md-min) {
+        width: 100%;
+        max-width: $sc-site-max-width;
+        margin: 0 auto;
+    }
+}
+

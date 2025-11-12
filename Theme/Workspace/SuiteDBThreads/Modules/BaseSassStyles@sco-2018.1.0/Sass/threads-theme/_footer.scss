@@ -1,0 +1,59 @@
+// Edited for Threads Theme
+
+// Footer Upper Section variables
+$sc-footer-upper-section-background-color: #DADBDA; /* editable({"type": "color", "label": "Upper Footer Background"}) */
+$sc-footer-upper-section-title-color: $sc-color-copy; /* editable({"type": "color", "label": "Upper Footer Title"}) */
+$sc-footer-upper-section-title-text-transform: uppercase;
+$sc-footer-upper-section-newsletter-label-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Newsletter Label Color"}) */
+$sc-footer-upper-section-newsletter-height: 54px;
+
+// Footer Middle Section variables
+$sc-footer-middle-section-background-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Middle Footer Background"}) */
+
+// Footer variables
+$sc-footer-border-color: $sc-color-theme-border-light; /* editable({"type": "color", "label": "Border"}) */
+$sc-footer-text-color: $sc-color-copy; /* editable({"type": "color", "label": "Text"}) */
+$sc-footer-font-size: 14px; 
+
+// Link variables
+$sc-footer-link-color: #949594; /* editable({"type": "color", "label": "Link"}) */
+$sc-footer-link-color-hover: $sc-color-copy; /* editable({"type": "color", "label": "Link hover"}) */
+$sc-footer-link-color-active: $sc-color-link-active; /* editable({"type": "color", "label": "Link active"}) */
+
+// Headings color
+$sc-footer-headings-color: $sc-color-copy; /* editable({"type": "color", "label": "Headings"}) */
+$sc-footer-headings-font-weight: 400;
+$sc-footer-column-link-heading-text-transform: uppercase; /* editable({
+	"type": "string",
+	"label": "Headings Text Transform",
+	"options": [
+		{"value": "none", "text": "none"},
+		{"value": "uppercase", "text": "uppercase"},
+		{"value": "lowercase", "text": "lowercase"},
+		{"value": "capitalize", "text": "capitalize"}
+	]
+}) */
+
+// Input fields variables
+$sc-footer-fields-background-color: $sc-neutral-shade-0;
+$sc-footer-fields-border-color: $sc-color-theme-border;
+$sc-footer-fields-text-color: $sc-color-copy;
+
+// Buttons variables
+$sc-footer-buttons-background-color: $sc-color-primary; /* editable({"type": "color", "label": "Button background"}) */
+$sc-footer-buttons-text-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Button text"}) */
+$sc-footer-buttons-border-color: $sc-button-primary-background-color; /* editable({"type": "color", "label": "Button border"}) */
+$sc-footer-buttons-text-transform: uppercase; /* editable({
+	"type": "string",
+	"label": "Buttons Text transform",
+	"options": [
+		{"value": "none", "text": "none"},
+		{"value": "uppercase", "text": "uppercase"},
+		{"value": "lowercase", "text": "lowercase"},
+		{"value": "capitalize", "text": "capitalize"}
+	]
+}) */
+
+// Copyright color
+$sc-footer-bottom-section-background-color: $sc-color-theme-border; /* editable({"type": "color", "label": "Bottom Footer Background"}) */
+$sc-footer-bottom-section-text-color: $sc-neutral-shade-0; /* editable({"type": "color", "label": "Copyright text"}) */

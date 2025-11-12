@@ -1,0 +1,77 @@
+{
+    "name": "SDBDownloadInvoice",
+    "fantasyName": "SDBDownloadInvoice",
+    "vendor": "SuiteDB",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Modify My Account in order to download invoices",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBDownloadInvoice.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SDBDownloadInvoice/Configuration/SDBDownloadInvoice.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/SDBDownloadInvoice/Sass/_sdbdownloadinvoice-sdbdownloadinvoice.scss"
+        },
+        "files": [
+            "Modules/SDBDownloadInvoice/Sass/_sdbdownloadinvoice-sdbdownloadinvoice.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBDownloadInvoice/Templates/suitedb_sdbdownloadinvoice_sdbdownloadinvoice.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/SDBDownloadInvoice/JavaScript/SuiteDB.SDBDownloadInvoice.SDBDownloadInvoice.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBDownloadInvoice/JavaScript/SuiteDB.SDBDownloadInvoice.SDBDownloadInvoice.js",
+                    "Modules/SDBDownloadInvoice/JavaScript/SDBDownloadInvoice.View.js",
+                    "Modules/SDBDownloadInvoice/JavaScript/SuiteDB.SDBDownloadInvoice.SDBDownloadInvoice.Model.js",
+                    "Modules/SDBDownloadInvoice/JavaScript/SuiteDB.SDBDownloadInvoice.SDBDownloadInvoice.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SDBDownloadInvoice/SuiteScript/SuiteDB.SDBDownloadInvoice.SDBDownloadInvoice.js",
+        "files": [
+            "Modules/SDBDownloadInvoice/SuiteScript/SuiteDB.SDBDownloadInvoice.SDBDownloadInvoice.js",
+            "Modules/SDBDownloadInvoice/SuiteScript/SDBDownloadInvoice.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace/SDBDownloadInvoice",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBDownloadInvoice/SuiteScript2/SDBDownloadInvoice.Service.ss"
+        ]
+    }
+}

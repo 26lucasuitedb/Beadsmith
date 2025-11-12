@@ -1,0 +1,86 @@
+{
+    "name": "SDBUploadOrdersMyAcc",
+    "fantasyName": "SDBUploadOrdersMyAcc",
+    "vendor": "SuiteDB",
+    "version": "1.1.8",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBUploadOrdersMyAcc.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/SDBUploadOrdersMyAcc/Configuration/SDBUploadOrdersMyAcc.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/SDBUploadOrdersMyAcc/Sass/_sdbuploadordersmyacc-sdbuploadordersmyacc.scss"
+        },
+        "files": [
+            "Modules/SDBUploadOrdersMyAcc/Sass/_sdbuploadordersmyacc-sdbuploadordersmyacc.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBUploadOrdersMyAcc/Templates/suitedb_sdbuploadordersmyacc_sdbuploadordersmyacc.tpl"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/SDBUploadOrdersMyAcc/Templates/suitedb_sdbuploadordersmyacc_sdbuploadordersmyacc.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.js",
+            "shopping": "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.View.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.Model.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.SS2Model.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/papaparse.js"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.View.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.Model.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.SS2Model.js",
+                    "Modules/SDBUploadOrdersMyAcc/JavaScript/papaparse.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace/SDBUploadOrdersMyAcc",
+    "suitescript2": {
+        "files": [
+            "Modules/SDBUploadOrdersMyAcc/SuiteScript2/SDBUploadOrdersMyAcc.Service.ss"
+        ]
+    }
+}
