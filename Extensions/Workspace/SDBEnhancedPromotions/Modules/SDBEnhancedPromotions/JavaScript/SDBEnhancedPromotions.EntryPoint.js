@@ -81,14 +81,9 @@ define(
 						}
 						this.profileId = profileId;
 						var promoModel = promotionsModel;
-						if (profileId == 0) {
-							var couponsPlaceholder = _.findWhere(navData, { id: "coupon-codes" });
-							// var loggedInOnly = _.findWhere(navData, { id: "logged-in-only" });
-							var newNav = _.without(navData, couponsPlaceholder);
-							self.updatedNav = true;
-							this.navData = newNav;
-							return;
-
+						var visibleNav=this.removeLoggedInRestrictedCategories(this.navData);
+						if(visibleNav){
+							this.navData=visibleNav;
 						}
 						this.promoModel = promoModel;
 						promoModel.fetch({
@@ -146,6 +141,22 @@ define(
 						})
 
 					}),
+					removeLoggedInRestrictedCategories: function (navigationData) {
+						var profile = ProfileModel.getInstance();
+						var profileId = 0;
+						if (profile && profile.get('internalid') && profile.get("isLoggedIn") != "F") {
+							profileId = profile.get('internalid');
+						}
+						this.profileId = profileId;
+
+						if (this.profileId == 0) {
+							navigationData = _.filter(navigationData, function (category) {
+								return category.loginRequired != true;
+							});
+
+						}
+						return navigationData;
+					},
 					getContext: _.wrap(HeaderMenuView.prototype.getContext, function (fn) {
 						var context = fn.apply(this, _.toArray(arguments).slice(1));
 						if (this.updatedNav && this.navData) {

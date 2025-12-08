@@ -1,13 +1,18 @@
 {
     "type": "object",
-    "properties": { 
-        "SDBEnhancedPromotions.config": {
-            "group": "extensions",
-            "subtab": "SDBEnhancedPromotions_subtab",
-            "type": "string",
-            "title": "SDBEnhancedPromotions_Title",
-            "description": "Config description example",
-            "default": "Default config example"
+    "modifications": [
+    {
+      "target": "$.properties.navigationData.items.properties",
+      "action": "add",
+      "value": {
+        "loginRequired": {
+          "type": "boolean",
+          "title": "Should be logged in to see",
+          "translate": false,
+          "description": "Add this menu item only if the user is logged in",
+          "mandatory": false
         }
+      }
     }
+  ]
 }

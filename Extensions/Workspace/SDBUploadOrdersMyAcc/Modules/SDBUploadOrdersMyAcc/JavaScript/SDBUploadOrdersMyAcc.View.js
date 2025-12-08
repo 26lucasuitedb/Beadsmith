@@ -100,9 +100,6 @@ define("SDBUploadOrdersMyAcc.SDBUploadOrdersMyAcc.View", [
     getSelectedMenu: function () {
       return "upload order";
     },
-    getTitle: function () {
-      return "Upload Order";
-    },
     getBreadcrumbPages: function () {
       return {
         text: Utils.translate("Upload Order"),

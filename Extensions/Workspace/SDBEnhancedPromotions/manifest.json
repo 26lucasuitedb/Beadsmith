@@ -2,15 +2,14 @@
     "name": "SDBEnhancedPromotions",
     "fantasyName": "SDBEnhancePromotions",
     "vendor": "SuiteDB",
-    "version": "1.0.3",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": "",
         "SCS": ""
     },
+    "version": "1.0.4",
     "description": "Create menu items and links with current website promotions per customer basis",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -22,16 +21,6 @@
     "configuration": {
         "files": [
             "Modules/SDBEnhancedPromotions/Configuration/SDBEnhancedPromotions.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss",
-            "myaccount": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss",
-            "checkout": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss"
-        },
-        "files": [
-            "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss"
         ]
     },
     "templates": {
@@ -52,6 +41,16 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss",
+            "myaccount": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss",
+            "checkout": "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss"
+        },
+        "files": [
+            "Modules/SDBEnhancedPromotions/Sass/_sdbenhancedpromotions-sdbenhancedpromotions.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -83,7 +82,6 @@
             }
         }
     },
-    "local_folder": "Workspace/SDBEnhancedPromotions",
     "suitescript2": {
         "files": [
             "Modules/SDBEnhancedPromotions/SuiteScript2/SDBEnhancedPromotions.service.ss"

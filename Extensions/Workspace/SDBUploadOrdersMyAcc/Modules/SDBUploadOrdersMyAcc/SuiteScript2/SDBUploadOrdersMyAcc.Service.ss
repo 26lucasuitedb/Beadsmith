@@ -14,21 +14,14 @@ define(["N/record", "N/log", "N/search"], function (record, log, search) {
         if (arrSku) {
           var filter = [];
           for (var i = 0; i < arrSku.length; i++) {
-            var myFilter = ["formulatext: CASE WHEN UPPER({itemid}) = UPPER('"+arrSku[i]+"') THEN 'T' ELSE 'F' END","is","T"]; 
+            var myFilter = ["itemid", "is", arrSku[i]]; //["itemid","startswith","BTC21"]
             filter.push(myFilter);
             filter.push("OR");
           }
-          filter.pop();
+          filter = filter.splice(0, filter.length - 1);
 
-          log.debug("FILTER", filter); 
+          log.error("FILTER", filter); //[["itemid","startswith","BTC21"],"OR",["itemid","startswith","SG45"]]
         }
-      // if (arrSku) {
-      //   var filter = [];
-      //   var myFilter = ["externalid","anyof"];
-      //   filter = [myFilter.concat(arrSku)];
-
-      //   log.debug("FILTER", filter);
-      // }
         var itemSearchObj = search.create({
           type: "item",
           filters: filter,
