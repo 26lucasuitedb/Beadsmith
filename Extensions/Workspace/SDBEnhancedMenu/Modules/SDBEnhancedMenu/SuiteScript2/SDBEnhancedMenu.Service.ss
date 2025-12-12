@@ -20,28 +20,55 @@ define(
                     context.response.write(JSON.stringify('Method not allowed'));
                     return;
                 }
+                var fetchPromotion = context.request.parameters.fetchPromotion;
+                if (fetchPromotion) {
+                    // fetch promotions by entity
+                    var suiteletUrl = url.resolveScript({
+                        deploymentId: 'customdeploy_sdb_get_promotion_by_entity',
+                        scriptId: 'customscript_sdb_get_promotion_by_entity',
+                        returnExternalUrl: true
+                    });
 
-                var suiteletUrl = url.resolveScript({
-                    deploymentId: 'customdeploy_sdb_get_navigation_images',
-                    scriptId: 'customscript_sdb_get_navigation_images',
-                    returnExternalUrl: true
-                });
+                    if (context.request.parameters) {
+                        suiteletUrl += '&' + Object.keys(context.request.parameters).map(function (key) {
+                            return key + '=' + context.request.parameters[key];
+                        }).join('&');
+                        // suiteletUrl += '&action=' + context.request.parameters.action;
+                    }
+                    log.error({
+                        title: 'suiteletURL Promotions',
+                        details: suiteletUrl
+                    });
+                    var request = https.request({
+                        method: context.request.method,
+                        url: suiteletUrl
+                    });
+                    response = request.body;
+                } else {
+                    // fetch extra nav data
 
-                if (context.request.parameters) {
-                    suiteletUrl += '&' + Object.keys(context.request.parameters).map(function (key) {
-                        return key + '=' + context.request.parameters[key];
-                    }).join('&');
-                    // suiteletUrl += '&action=' + context.request.parameters.action;
+                    var suiteletUrl = url.resolveScript({
+                        deploymentId: 'customdeploy_sdb_get_navigation_images',
+                        scriptId: 'customscript_sdb_get_navigation_images',
+                        returnExternalUrl: true
+                    });
+
+                    if (context.request.parameters) {
+                        suiteletUrl += '&' + Object.keys(context.request.parameters).map(function (key) {
+                            return key + '=' + context.request.parameters[key];
+                        }).join('&');
+                        // suiteletUrl += '&action=' + context.request.parameters.action;
+                    }
+                    log.error({
+                        title: 'suiteletURL Enhanced Menu',
+                        details: suiteletUrl
+                    });
+                    var request = https.request({
+                        method: context.request.method,
+                        url: suiteletUrl
+                    });
+                    response = request.body;
                 }
-                log.error({
-                    title: 'suiteletURL Enhanced Menu',
-                    details: suiteletUrl
-                });
-                var request = https.request({
-                    method: context.request.method,
-                    url: suiteletUrl
-                });
-                response = request.body;
 
                 context.response.write(JSON.stringify(response));
             } catch (e) {

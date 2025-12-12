@@ -30,6 +30,14 @@
             "title": "Alter the header layout with megamenu",
             "description": "Check this option if you want to alter the default header styles into a megamenu layout instead",
             "default": "false"
+        },
+        "SDBEnhancedMenu.exposePromotions": {
+            "group": "extensions",
+            "subtab": "SDBEnhancedMenu_subtab",
+            "type": "boolean",
+            "title": "Use promotions functionality to expose promotions to customers",
+            "description": "Check this option if you want to show on the header a list of applicable promotions to the customer",
+            "default": "true"
         }
     }
 }
