@@ -29,11 +29,11 @@
 						{{#each columns}}
 						<div class="mega-col">
 							{{#each this}}
-							<a class="lvl2 {{class}}" {{objectToAtrributes this}}>
+							<a class="{{#if ../../preventCategoriesSplit}}lvl2 {{/if}}{{class}}" {{objectToAtrributes this}}>
 								{{translate this.text}}
 							</a>
 
-							{{#if this.categories}}
+							{{#if this.categories}} 
 							<ul class="lvl3-list">
 								{{#each this.categories}}
 								<li>
@@ -52,6 +52,10 @@
 						{{#if imageurl}}
 						<div class="mega-col image-col">
 							<img src="{{imageurl}}" alt="{{text}} Category">
+
+							{{#if linkname}}
+							<a class="image-link" href="{{linkurl}}" target="_blank" rel="noopener noreferrer">{{linkname}}</a>
+							{{/if}}
 						</div>
 						{{/if}}
 

@@ -36,7 +36,7 @@ define(
 			return nav;
 		}
 
-		function mergeImages(categories, images, siteUrl) {
+		function mergeBanners(categories, banners, siteUrl, preventCategoriesSplit) {
 			_.each(categories, function (cat) {
 				var hasSubcats = _.some(cat.categories, function (lvl2) {
 					return lvl2.categories && lvl2.categories.length;
@@ -46,33 +46,42 @@ define(
 
 				cat.noSubs = !hasSubcats;
 
-				if (images[cat.text]) {
-					cat.imageurl = images[cat.text];
+				if (banners[cat.text]) {
+					var catBannerInfo = banners[cat.text];
+					cat.imageurl = catBannerInfo.url ? catBannerInfo.url : null;
+					cat.linkname = catBannerInfo.linkname ? catBannerInfo.linkname : null;
+					cat.linkurl = catBannerInfo.linkurl ? catBannerInfo.linkurl : null;
 				}
 
 				if (cat.imgUrl) {
 					cat.imageurl = siteUrl + cat.imgUrl;
 				}
-
 				// Column logic
 				if (cat.noSubs && !cat.imageurl || cat.noSubs) {
 					cat.columnCount = level2Count <= 5 ? 1 : 2;
 				}
-
-				if (cat.noSubs && level2Count > 4) {
-				// if (cat.categories && cat.categories.length) {
-					var desiredColumns = 4
-					cat.columns = evenlyDistributeColumns(cat.categories, desiredColumns);
-
-					cat.columnCount = cat.imageurl
-						? desiredColumns + 1
-						: desiredColumns;
-
-					return; // 🔥 avoid executing the "standard" buildColumnsForLevel2
+				
+				var desiredColumns = 4;
+				cat.preventCategoriesSplit=preventCategoriesSplit? true : false;
+				if(preventCategoriesSplit){
+					if (cat.noSubs && level2Count > 4) {
+						// if (cat.categories && cat.categories.length) {
+						cat.columns = evenlyDistributeColumns(cat.categories, desiredColumns);
+	
+						cat.columnCount = cat.imageurl
+							? desiredColumns + 1
+							: desiredColumns;
+	
+						return; // 🔥 avoid executing the "standard" buildColumnsForLevel2
+					}
 				}
 				//need to combine categories into columns to prevent empty spaces
 				if (cat.categories && cat.categories.length) {
-					cat.columns = buildColumnsForLevel2(cat.categories);
+					if(preventCategoriesSplit){
+						cat.columns = buildColumnsForLevel2(cat.categories);
+					}else{
+						cat.columns = buildBalancedColumns(cat.categories, desiredColumns);
+					}
 					cat.columnCount = cat.imageurl ? cat.columns.length + 1 : cat.columns.length;
 				}
 			});
@@ -105,6 +114,69 @@ define(
 				});
 			}
 			return navData;
+		}
+
+		function buildBalancedColumns(level2Categories, desiredColumnCount) {
+			if (!level2Categories || !level2Categories.length) {
+				return [];
+			}
+
+			// 1. Flatten into individual rows
+			var rows = [];
+			_.each(level2Categories, function (cat) {
+				// parent row
+				rows.push({
+					isParent: true,
+					text: cat.text,
+					class: cat.class + ' lvl2',
+					attributes: cat.attributes,
+					original: cat
+				});
+
+				// children rows
+				if (cat.categories && cat.categories.length) {
+					_.each(cat.categories, function (child) {
+						rows.push({
+							isParent: false,
+							text: child.text,
+							class: child.class,
+							attributes: child.attributes,
+							original: child
+						});
+					});
+				}
+			});
+
+			// 2. Create empty columns
+			var columns = [];
+			for (var i = 0; i < desiredColumnCount; i++) {
+				columns.push([]);
+			}
+
+			// 3. Greedy distribution:
+			// Always place next row in the currently shortest column
+			var colHeights = new Array(desiredColumnCount).fill(0);
+
+			_.each(rows, function (row) {
+				// find the shortest column
+				var targetIndex = 0;
+				var minHeight = colHeights[0];
+
+				for (var i = 1; i < desiredColumnCount; i++) {
+					if (colHeights[i] < minHeight) {
+						minHeight = colHeights[i];
+						targetIndex = i;
+					}
+				}
+
+				// add row to chosen column
+				columns[targetIndex].push(row);
+
+				// height: parent = 1.5, child = 1 (makes nicer spacing)
+				colHeights[targetIndex] += row.isParent ? 1.5 : 1;
+			});
+
+			return columns;
 		}
 
 		function buildColumnsForLevel2(level2Categories) {
@@ -198,7 +270,7 @@ define(
 				var useCustomHeader = env.getConfig("SDBEnhancedMenu.layoutChange") == true ? true : false;
 				var usePromotions = env.getConfig("SDBEnhancedMenu.exposePromotions") == true ? true : false;
 				var templateToUse = useCustomHeader ? enhancedMenuTpl : HeaderMenu.prototype.template;
-
+				var preventCategoriesSplit = env.getConfig("SDBEnhancedMenu.preventSplitCategoryTree") == true ? true : false;
 				_.extend(HeaderMenu.prototype, {
 
 					initialize: _.wrap(HeaderMenu.prototype.initialize, function (fn) {
@@ -222,6 +294,8 @@ define(
 
 						// 1. Remove login-required categories
 						var navData = removeLoggedInRequired(baseNav, profileId);
+						this.primaryNav = navData;
+						this.preventCategoriesSplit = preventCategoriesSplit;
 
 						var enhancedReq = EnhancedMenuModel.fetch(); // expected to return JSON string in response body
 						var promotionsReq;
@@ -242,16 +316,21 @@ define(
 
 						$.when(enhancedReq, promotionsReq)
 							.done(function (imgResponse, promotionResponse) {
-								var images = {};
+								var banners = {};
 								var imgResponse = imgResponse && imgResponse[0] !== undefined ? imgResponse[0] : imgResponse;
 								if (imgResponse) {
 									var parsedImg = JSON.parse(imgResponse);
 									_.each(parsedImg, function (c) {
-										images[c.name] = c.url;
+										banners[c.name] = {
+											url: c.url,
+											linkname: c.linkname,
+											linkurl: c.linkurl
+										};
 									});
+
 								}
 
-								navData = mergeImages(navData, images, self.siteUrl);
+								navData = mergeBanners(navData, banners, self.siteUrl,preventCategoriesSplit);
 								var promotionResponse = promotionResponse && promotionResponse[0] !== undefined ? promotionResponse[0] : promotionResponse;
 								if (promotionResponse) {
 									var parsedPromo = JSON.parse(promotionResponse);
@@ -348,11 +427,14 @@ define(
 
 					getContext: _.wrap(HeaderMenu.prototype.getContext, function (fn) {
 						var context = fn.apply(this, _.toArray(arguments).slice(1));
+						
+						if (this.primaryNav) {
+							context.categories = this.primaryNav;
+						}
 						if (this.finalNav) {
 							context.categories = this.finalNav;
-							debugger;
 						}
-						console.log("context2", context);
+						context.preventCategoriesSplit = this.preventCategoriesSplit ? true : false;
 						return context;
 					})
 				});

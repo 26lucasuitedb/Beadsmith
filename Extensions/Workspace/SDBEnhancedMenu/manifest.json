@@ -2,15 +2,14 @@
     "name": "SDBEnhancedMenu",
     "fantasyName": "SDBEnhancedMenu",
     "vendor": "SuiteDB",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": "",
         "SCS": ""
     },
+    "version": "1.0.0",
     "description": "Extension overrides the header tpl for easier navigation",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -25,16 +24,6 @@
     "configuration": {
         "files": [
             "Modules/SDBEnhancedMenu/Configuration/EnhancedMenu.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss",
-            "myaccount": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss",
-            "checkout": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss"
-        },
-        "files": [
-            "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss"
         ]
     },
     "templates": {
@@ -55,6 +44,16 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss",
+            "myaccount": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss",
+            "checkout": "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss"
+        },
+        "files": [
+            "Modules/SDBEnhancedMenu/Sass/_sdbenhancedmenu-sdbenhancedmenu.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -89,7 +88,6 @@
             }
         }
     },
-    "local_folder": "Workspace/SDBEnhancedMenu",
     "suitescript2": {
         "files": [
             "Modules/SDBEnhancedMenu/SuiteScript2/SDBEnhancedMenu.Service.ss"
