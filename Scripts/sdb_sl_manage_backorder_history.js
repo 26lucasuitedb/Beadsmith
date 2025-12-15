@@ -147,6 +147,10 @@ define(['N/record', 'N/query', 'N/runtime'],
                     fieldId: 'custbody_beadsmith_ordernowave',
                     value: false
                 });
+                salesOrder.setValue({
+                    fieldId: 'orderstatus',
+                    value: 'A'
+                });
 
                 let itemsToCommit = params.item.split(',');
                 let foundLines = true;
@@ -194,13 +198,17 @@ define(['N/record', 'N/query', 'N/runtime'],
                             (SUM(quantityonhand) - AVG(committedqtyperlocation)) AS total_quantity_available,
                         	COUNT(DISTINCT so.entity) OVER () AS total_entities,
                             so.memo,
-                            img.image_url AS fileurl
+                            COALESCE(
+                                fimage.url,
+                                img.image_url
+                            ) AS fileurl
                         FROM
                             transaction AS so    
                             INNER JOIN transactionline AS soitem ON so.id = soitem.transaction
                             LEFT JOIN customer AS c ON so.entity = c.id
                             LEFT JOIN inventorybalance AS ib ON soitem.item = ib.item
                             INNER JOIN item AS it ON soitem.item = it.id
+                            LEFT JOIN file fimage ON fimage.id = it.custitem_atlas_item_image
                             LEFT JOIN (
                                 SELECT ii.item, MIN(f.url) AS image_url
                                 FROM itemimage AS ii
@@ -212,10 +220,10 @@ define(['N/record', 'N/query', 'N/runtime'],
                             AND (-soitem.quantity - soitem.quantitybilled) > 0
                             AND so.status IN ('SalesOrd:D', 'SalesOrd:E', 'SalesOrd:B')
                         	AND NVL(c.custentity17, 'F') = 'F'
-                            AND custcol_bs_so_line_number IS NOT NULL
                             AND soitem.commitinventory = '3'
                             AND NVL(soitem.isclosed, 'F') = 'F'
                             AND so.entity = ${entityId}
+                            AND soitem.assemblycomponent = 'F'
                         GROUP BY
                             so.id,
                             so.tranid, 
@@ -227,8 +235,10 @@ define(['N/record', 'N/query', 'N/runtime'],
                     	    so.employee,
                             so.memo,
                             (-soitem.quantity - soitem.quantitybilled),
+                            fimage.url,
                             img.image_url`
                 }).asMappedResults();
+              //removed filter: AND custcol_bs_so_line_number IS NOT NULL
                 log.audit('results: ', queryResult);
 
                 return queryResult;
