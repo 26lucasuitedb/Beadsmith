@@ -7,57 +7,64 @@
 			<i class="header-menu-search-icon"></i>
 		</button>
 	</div> --}}
-
+	{{log this "mheader"}}
 
 	<ul class="header-menu-level1">
 
 		{{#each categories}}
-			{{#if text}}
-				<li {{#if categories}}data-toggle="categories-menu"{{/if}}>
-					<a class="{{class}}" {{objectToAtrributes this}}>
-					{{translate text}}
-					</a>
-					{{#if categories}}
-					<ul class="header-menu-level-container">
-						<li class="header-menu-levels-wrapper {{#if noSubs}}no-subs{{/if}} {{#unless imageurl}}no-img{{/unless}}" {{#if columnCount}}style="--column-count: {{columnCount}};"{{/if}}>
-						{{!-- <li> --}}
-							<ul class="header-menu-level2">
-								{{#each categories}}
-								{{!-- <li {{#if categories}}class="sub-categories-menu" data-toggle="sub-categories-menu"{{/if}}> --}}
-								<li {{#if categories}}class="categories-menu-arrow"{{/if}}>
-									<a class="{{class}}{{#if categories}} categories-menu-arrow{{/if}}" {{objectToAtrributes this}}>{{translate text}}</a>
+		{{#if text}}
+		<li {{#if categories}}data-toggle="categories-menu" {{/if}}>
+			<a class="{{class}}" {{objectToAtrributes this}}>
+				{{translate text}}
+			</a>
+			{{#if categories}}
+			<ul class="header-menu-level-container">
+				<li
+					class="header-menu-levels-wrapper {{#if noSubs}}no-subs{{/if}} {{#unless imageurl}}no-img{{/unless}}">
 
-									{{#if categories}}
-									<ul class="header-menu-level3">
-										{{#each categories}}
-										<li>
-											<a class="{{class}}" {{objectToAtrributes this}}>{{translate text}}</a>
-										</li>
-										{{/each}}
-									</ul>
-									{{/if}}
+					<div class="mega-columns" {{#if columnCount}}style="--column-count: {{columnCount}};" {{/if}}>
 
+						{{!-- Left-side columns --}}
+
+						{{#each columns}}
+						<div class="mega-col">
+							{{#each this}}
+							<a class="{{#if ../../preventCategoriesSplit}}lvl2 {{/if}}{{class}}" {{objectToAtrributes this}}>
+								{{translate this.text}}
+							</a>
+
+							{{#if this.categories}} 
+							<ul class="lvl3-list">
+								{{#each this.categories}}
+								<li>
+									<a class="{{class}}" {{objectToAtrributes this}}>
+										{{translate text}}
+									</a>
 								</li>
 								{{/each}}
-
-								{{!-- {{#unless noSubs}}
-								<div class="header-menu-level3 navigation-info-holder is-open">
-									<p class="navigation-info">{{translate 'Hover over a category to display subcategories'}}</p>
-								</div>
-								{{/unless}} --}}
 							</ul>
-						</li>
+							{{/if}}
+							{{/each}}
+						</div>
+						{{/each}}
 
+						{{!-- Right-side image column --}}
 						{{#if imageurl}}
-							<div class="megamenu-image-wrapper">
+						<div class="mega-col image-col">
 							<img src="{{imageurl}}" alt="{{text}} Category">
-							</div>
+
+							{{#if linkname}}
+							<a class="image-link" href="{{linkurl}}" target="_blank" rel="noopener noreferrer">{{linkname}}</a>
+							{{/if}}
+						</div>
 						{{/if}}
-					
-					</ul>
-					{{/if}}
+
+					</div>
 				</li>
+			</ul>
 			{{/if}}
+		</li>
+		{{/if}}
 		{{/each}}
 
 	</ul>
@@ -74,10 +81,9 @@
 {{!----
 Use the following context variables when customizing this template:
 
-	categories (Array)
-	showExtendedMenu (Boolean)
-	showLanguages (Boolean)
-	showCurrencies (Boolean)
+categories (Array)
+showExtendedMenu (Boolean)
+showLanguages (Boolean)
+showCurrencies (Boolean)
 
 ----}}
-

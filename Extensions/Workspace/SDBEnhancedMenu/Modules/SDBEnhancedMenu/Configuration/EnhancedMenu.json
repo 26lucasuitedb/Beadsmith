@@ -1,5 +1,10 @@
 {
   "type": "object",
+   "group": {
+    "id": "enhancedHeader",
+    "title": "Menu Customizations",
+    "description": "Header Menu Customizations"
+  },
   "modifications": [
     {
       "target": "$.properties.navigationData.items.properties",
@@ -24,11 +29,27 @@
   ],
    "properties": { 
         "SDBEnhancedMenu.layoutChange": {
-            "group": "extensions",
+            "group": "enhancedHeader",
             "subtab": "SDBEnhancedMenu_subtab",
             "type": "boolean",
             "title": "Alter the header layout with megamenu",
             "description": "Check this option if you want to alter the default header styles into a megamenu layout instead",
+            "default": "false"
+        },
+        "SDBEnhancedMenu.exposePromotions": {
+            "group": "enhancedHeader",
+            "subtab": "SDBEnhancedMenu_subtab",
+            "type": "boolean",
+            "title": "Use promotions functionality to expose promotions to customers",
+            "description": "Check this option if you want to show on the header a list of applicable promotions to the customer",
+            "default": "true"
+        },
+         "SDBEnhancedMenu.preventSplitCategoryTree": {
+            "group": "enhancedHeader",
+            "subtab": "SDBEnhancedMenu_subtab",
+            "type": "boolean",
+            "title": "Prevent parent + child categories to be split into different columns",
+            "description": "Check this option if you want to keep parent + child categories always on the same column",
             "default": "false"
         }
     }
