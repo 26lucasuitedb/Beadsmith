@@ -432,7 +432,6 @@ define(['N/record', 'N/ui/serverWidget', 'N/query', 'N/runtime'],
                     }
 
 
-
                     sublist.setSublistValue({
                         id: 'custpage_tranid',
                         line: i,
@@ -495,7 +494,7 @@ define(['N/record', 'N/ui/serverWidget', 'N/query', 'N/runtime'],
                     sublist.setSublistValue({
                         id: 'custpage_item_rate',
                         line: i,
-                        value: row.item_rate || '-'
+                        value: row.item_rate || '0'
                     });
 
                     sublist.setSublistValue({
@@ -599,9 +598,10 @@ define(['N/record', 'N/ui/serverWidget', 'N/query', 'N/runtime'],
                         AND (-soitem.quantity - soitem.quantitybilled) > 0
                         AND so.status IN ('D', 'E', 'B')
                     	AND NVL(c.custentity17, 'F') = 'F'
-                        AND custcol_bs_so_line_number IS NOT NULL
                         AND soitem.commitinventory = '3'
                         AND NVL(soitem.isclosed, 'F') = 'F'
+                        AND NOT donotdisplayline = 'T'
+                        AND soitem.assemblycomponent = 'F'
                         ${filters}
                     GROUP BY
                         so.id,
