@@ -51,6 +51,7 @@ define(
 					cat.imageurl = catBannerInfo.url ? catBannerInfo.url : null;
 					cat.linkname = catBannerInfo.linkname ? catBannerInfo.linkname : null;
 					cat.linkurl = catBannerInfo.linkurl ? catBannerInfo.linkurl : null;
+					cat.info = catBannerInfo.info ? catBannerInfo.info : null;
 				}
 
 				if (cat.imgUrl) {
@@ -60,26 +61,26 @@ define(
 				if (cat.noSubs && !cat.imageurl || cat.noSubs) {
 					cat.columnCount = level2Count <= 5 ? 1 : 2;
 				}
-				
+
 				var desiredColumns = 4;
-				cat.preventCategoriesSplit=preventCategoriesSplit? true : false;
-				if(preventCategoriesSplit){
+				cat.preventCategoriesSplit = preventCategoriesSplit ? true : false;
+				if (preventCategoriesSplit) {
 					if (cat.noSubs && level2Count > 4) {
 						// if (cat.categories && cat.categories.length) {
 						cat.columns = evenlyDistributeColumns(cat.categories, desiredColumns);
-	
+
 						cat.columnCount = cat.imageurl
 							? desiredColumns + 1
 							: desiredColumns;
-	
+
 						return; // 🔥 avoid executing the "standard" buildColumnsForLevel2
 					}
 				}
 				//need to combine categories into columns to prevent empty spaces
 				if (cat.categories && cat.categories.length) {
-					if(preventCategoriesSplit){
+					if (preventCategoriesSplit) {
 						cat.columns = buildColumnsForLevel2(cat.categories);
-					}else{
+					} else {
 						cat.columns = buildBalancedColumns(cat.categories, desiredColumns);
 					}
 					cat.columnCount = cat.imageurl ? cat.columns.length + 1 : cat.columns.length;
@@ -129,52 +130,34 @@ define(
 					isParent: true,
 					text: cat.text,
 					class: cat.class + ' lvl2',
-					attributes: cat.attributes,
-					original: cat
+					data:cat.data,
+					href: cat.href,
 				});
 
 				// children rows
 				if (cat.categories && cat.categories.length) {
 					_.each(cat.categories, function (child) {
-						rows.push({
-							isParent: false,
-							text: child.text,
-							class: child.class,
-							attributes: child.attributes,
-							original: child
-						});
+						rows.push(child);
 					});
 				}
 			});
 
-			// 2. Create empty columns
+			var totalRows = rows.length;
+			desiredColumnCount = Math.max(1, desiredColumnCount);
+
+			var rowsPerColumn = Math.ceil(totalRows / desiredColumnCount);
+
+			// 3. Slice rows into vertical columns
 			var columns = [];
+			var index = 0;
+
 			for (var i = 0; i < desiredColumnCount; i++) {
-				columns.push([]);
-			}
-
-			// 3. Greedy distribution:
-			// Always place next row in the currently shortest column
-			var colHeights = new Array(desiredColumnCount).fill(0);
-
-			_.each(rows, function (row) {
-				// find the shortest column
-				var targetIndex = 0;
-				var minHeight = colHeights[0];
-
-				for (var i = 1; i < desiredColumnCount; i++) {
-					if (colHeights[i] < minHeight) {
-						minHeight = colHeights[i];
-						targetIndex = i;
-					}
+				var column = rows.slice(index, index + rowsPerColumn);
+				if (column.length) {
+					columns.push(column);
 				}
-
-				// add row to chosen column
-				columns[targetIndex].push(row);
-
-				// height: parent = 1.5, child = 1 (makes nicer spacing)
-				colHeights[targetIndex] += row.isParent ? 1.5 : 1;
-			});
+				index += rowsPerColumn;
+			}
 
 			return columns;
 		}
@@ -324,13 +307,14 @@ define(
 										banners[c.name] = {
 											url: c.url,
 											linkname: c.linkname,
-											linkurl: c.linkurl
+											linkurl: c.linkurl,
+											info:c.categoryinfo
 										};
 									});
 
 								}
 
-								navData = mergeBanners(navData, banners, self.siteUrl,preventCategoriesSplit);
+								navData = mergeBanners(navData, banners, self.siteUrl, preventCategoriesSplit);
 								var promotionResponse = promotionResponse && promotionResponse[0] !== undefined ? promotionResponse[0] : promotionResponse;
 								if (promotionResponse) {
 									var parsedPromo = JSON.parse(promotionResponse);
@@ -427,7 +411,7 @@ define(
 
 					getContext: _.wrap(HeaderMenu.prototype.getContext, function (fn) {
 						var context = fn.apply(this, _.toArray(arguments).slice(1));
-						
+
 						if (this.primaryNav) {
 							context.categories = this.primaryNav;
 						}

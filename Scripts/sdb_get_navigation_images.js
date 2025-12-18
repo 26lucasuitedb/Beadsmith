@@ -13,7 +13,8 @@ define(['N/query'], function (query) {
                     f.url,
                     cc.primaryParent,
                     cc.custrecord_cat_link_name AS linkName,
-					cc.custrecord_cat_link_url AS linkUrl
+					cc.custrecord_cat_link_url AS linkUrl,
+                    cc.custrecord_sdb_megamenu_info AS categoryinfo
                 FROM 
                     CommerceCategory AS cc
                     INNER JOIN file AS f ON f.id = cc.custrecord_sdb_megamenu_image

@@ -7,7 +7,6 @@
 			<i class="header-menu-search-icon"></i>
 		</button>
 	</div> --}}
-	{{log this "mheader"}}
 
 	<ul class="header-menu-level1">
 
@@ -37,7 +36,7 @@
 							<ul class="lvl3-list">
 								{{#each this.categories}}
 								<li>
-									<a class="{{class}}" {{objectToAtrributes this}}>
+									<a class="{{class}}" {{objectToAtrributes data}}>
 										{{translate text}}
 									</a>
 								</li>
@@ -53,9 +52,15 @@
 						<div class="mega-col image-col">
 							<img src="{{imageurl}}" alt="{{text}} Category">
 
+							{{#if info}}
+								<p class="mega-information">{{info}}
 							{{#if linkname}}
 							<a class="image-link" href="{{linkurl}}" target="_blank" rel="noopener noreferrer">{{linkname}}</a>
 							{{/if}}
+
+								</p>
+							{{/if}}
+
 						</div>
 						{{/if}}
 
