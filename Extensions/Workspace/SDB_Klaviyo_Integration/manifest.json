@@ -1,0 +1,65 @@
+{
+    "name": "SDB_Klaviyo_Integration",
+    "fantasyName": "SDB_Klaviyo_Integration",
+    "vendor": "SuiteDB",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "SDB_Klaviyo_Integration",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/SDBKlaviyoIntegration.Service.ss"
+            ]
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.EntryPoint.js",
+            "myaccount": "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.EntryPoint.js",
+            "checkout": "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.EntryPoint.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.EntryPoint.js",
+                    "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.EntryPoint.js",
+                    "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.EntryPoint.js",
+                    "Modules/SDBKlaviyoIntegration/JavaScript/SuiteDB.SDB_Klaviyo_Integration.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SDBKlaviyoIntegration/SuiteScript/SuiteDB.SDB_Klaviyo_Integration.SDBKlaviyoIntegration.js",
+        "files": [
+            "Modules/SDBKlaviyoIntegration/SuiteScript/SuiteDB.SDB_Klaviyo_Integration.SDBKlaviyoIntegration.js",
+            "Modules/SDBKlaviyoIntegration/SuiteScript/SDBKlaviyoIntegration.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace/SDB_Klaviyo_Integration",
+    "suitescript2": {
+        "files": []
+    }
+}
